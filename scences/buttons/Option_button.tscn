@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scences/buttons/MenuButton.tscn" type="PackedScene" id=1]
+
+[node name="Option_button" instance=ExtResource( 1 )]
+text = "选项"
+scene_to_load = "res://scences/Optiongame.tscn"

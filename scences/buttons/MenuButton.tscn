@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://font/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scences/buttons/MenuButton.gd" type="Script" id=2]
+
+[node name="Menu_button" type="Button"]
+margin_top = 539.0
+margin_right = 63.0
+margin_bottom = 575.0
+hint_tooltip = "hi"
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.85098, 0.85098, 0.85098, 1 )
+text = "lable"
+align = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
