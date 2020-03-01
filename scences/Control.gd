@@ -1,12 +1,7 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var scene_path_load
 
-# Called when the node enters the scene tree for the first time.
 # 取得每个按键对应要转场的信息
 func _ready():
 	# 这个是让键盘操作预先停留在新游戏按钮上
@@ -36,3 +31,8 @@ func _input(event):
 # 动画播放完之后切场景
 func _on_ColorRect_fade_finished():
 	get_tree().change_scene(scene_path_load) 
+
+
+func _on_go_test_button_pressed():
+	get_tree().change_scene("res://scences/Sc_test_menu.tscn")
+	

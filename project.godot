@@ -26,8 +26,9 @@ config/macos_native_icon="res://UI/icon.icns"
 
 window/size/width=1920
 window/size/height=1080
+window/size/fullscreen=true
 window/dpi/allow_hidpi=true
-mouse_cursor/custom_image="res://UI/m3.png"
+mouse_cursor/custom_image="res://Image/mm.png"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 

@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Image/man.png" type="Texture" id=1]
+[ext_resource path="res://Image/human_01.png" type="Texture" id=1]
 [ext_resource path="res://font/new_dynamicfont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scences/buttons/NewGameButton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scences/buttons/Con_Button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scences/buttons/Option_button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scences/animation/fade_in.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scences/Control.gd" type="Script" id=7]
+[ext_resource path="res://scences/go_test_button.gd" type="Script" id=8]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
@@ -29,19 +30,21 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="Main"]
-margin_right = 752.0
+margin_right = 736.0
 margin_bottom = 1080.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextureRect" type="TextureRect" parent="Main/CenterContainer"]
-margin_top = 158.0
-margin_right = 752.0
-margin_bottom = 922.0
+margin_left = 255.0
+margin_top = 219.0
+margin_right = 480.0
+margin_bottom = 861.0
 texture = ExtResource( 1 )
+stretch_mode = 1
 
 [node name="CenterContainer2" type="CenterContainer" parent="Main"]
-margin_left = 756.0
+margin_left = 740.0
 margin_right = 1476.0
 margin_bottom = 1080.0
 size_flags_horizontal = 3
@@ -55,18 +58,18 @@ custom_constants/separation = 10
 alignment = 1
 
 [node name="Label" type="Label" parent="Main/VBoxContainer"]
-margin_top = 314.0
+margin_top = 291.0
 margin_right = 98.0
-margin_bottom = 344.0
+margin_bottom = 321.0
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "幻世界"
 align = 2
 
 [node name="buttons" type="VBoxContainer" parent="Main/VBoxContainer"]
-margin_top = 354.0
+margin_top = 331.0
 margin_right = 98.0
-margin_bottom = 470.0
+margin_bottom = 447.0
 
 [node name="NewGameButton" parent="Main/VBoxContainer/buttons" instance=ExtResource( 3 )]
 margin_top = 0.0
@@ -86,26 +89,36 @@ margin_right = 98.0
 margin_bottom = 116.0
 hint_tooltip = ""
 
-[node name="Button" type="Button" parent="Main/VBoxContainer"]
-margin_top = 480.0
+[node name="go_test_button" type="Button" parent="Main/VBoxContainer"]
+margin_top = 457.0
 margin_right = 98.0
-margin_bottom = 516.0
+margin_bottom = 493.0
+custom_fonts/font = ExtResource( 2 )
+text = "测试"
+align = 2
+script = ExtResource( 8 )
+sc_name = "test_menu"
+
+[node name="Button" type="Button" parent="Main/VBoxContainer"]
+margin_top = 503.0
+margin_right = 98.0
+margin_bottom = 539.0
 custom_fonts/font = ExtResource( 2 )
 text = "退出"
 align = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="Main/VBoxContainer"]
-margin_top = 526.0
+margin_top = 549.0
 margin_right = 98.0
-margin_bottom = 726.0
+margin_bottom = 749.0
 rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 3
 size_flags_vertical = 13
 
 [node name="Label2" type="Label" parent="Main/VBoxContainer"]
-margin_top = 736.0
+margin_top = 759.0
 margin_right = 98.0
-margin_bottom = 766.0
+margin_bottom = 789.0
 size_flags_vertical = 1
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -113,5 +126,6 @@ text = "版本0.021"
 
 [node name="ColorRect" parent="." instance=ExtResource( 6 )]
 visible = false
+[connection signal="pressed" from="Main/VBoxContainer/go_test_button" to="." method="_on_go_test_button_pressed"]
 [connection signal="pressed" from="Main/VBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="fade_finished" from="ColorRect" to="." method="_on_ColorRect_fade_finished"]
