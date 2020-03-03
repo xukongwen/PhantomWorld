@@ -1,0 +1,16 @@
+{
+  "工作表1": {
+    "甘草\n": {
+      "Item_dis": "土\n",
+      "Item_cont": 30
+    },
+    "干姜": {
+      "Item_dis": "木",
+      "Item_cont": 20
+    },
+    "附子": {
+      "Item_dis": "木",
+      "Item_cont": 30
+    }
+  }
+}

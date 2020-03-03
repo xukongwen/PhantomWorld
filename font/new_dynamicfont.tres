@@ -3,5 +3,5 @@
 [ext_resource path="res://font/WenCangShuFang-2.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 25
+size = 19
 font_data = ExtResource( 1 )

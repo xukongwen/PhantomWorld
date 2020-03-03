@@ -22,13 +22,17 @@ boot_splash/image="res://UI/studio_logo.png"
 config/icon="res://UI/logo.png"
 config/macos_native_icon="res://UI/icon.icns"
 
+[autoload]
+
+save_load_test="*res://Script/save_load_test.gd"
+
 [display]
 
 window/size/width=1920
 window/size/height=1080
 window/size/fullscreen=true
 window/dpi/allow_hidpi=true
-mouse_cursor/custom_image="res://Image/mm.png"
+mouse_cursor/custom_image="res://UI/mouse.png"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
