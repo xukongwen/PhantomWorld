@@ -18,27 +18,6 @@ func _ready():
 	$MenuButton.get_popup().connect("id_pressed",self,"_on_item_pressed")
 	$About.get_popup().connect("id_pressed",self,"_on_item_about")
 	
-	read_json_1()
-	
-func read_json_1():
-	
-	var data_file = File.new()
-	
-	assert(data_file.file_exists("res://data/test.json"))
-	
-	data_file.open("res://data/test.json", data_file.READ)
-	var text_json = data_file.get_as_text()
-	var result_json = parse_json(text_json)
-	# assert(result_json.size() > 0)
-
-	if result_json.error == OK:
-		var data = result_json.result
-		print(data)
-	else:
-		print("Error: ", result_json.error)
-		print("Error Line: ", result_json.error_line)
-		print("Error String: ", result_json.error_string)
-		
 
 	
 # 更新title

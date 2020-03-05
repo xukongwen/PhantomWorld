@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://font/WenCangShuFang-2.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scences/test/UI_test.gd" type="Script" id=2]
 [ext_resource path="res://font/new_dynamicfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://addons/dialogue_tree/resource/DialougeRes.tres" type="Resource" id=4]
+[ext_resource path="res://addons/dialogue_tree/scripts/dialogue.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -82,18 +84,9 @@ margin_top = 32.0
 margin_right = -4.0
 margin_bottom = -4.0
 
-[node name="Tree" type="Tree" parent="TabContainer/Tabs2"]
-margin_right = 452.0
-margin_bottom = 404.0
-columns = 5
-allow_reselect = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorRect" type="ColorRect" parent="TabContainer/Tabs2/Tree"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="Dialogue" type="Node" parent="TabContainer/Tabs2"]
+script = ExtResource( 5 )
+DialogueResource = ExtResource( 4 )
 
 [node name="open_file" type="FileDialog" parent="."]
 margin_left = 424.222
@@ -119,7 +112,6 @@ current_dir = "/Users/xuhua/Documents/GitHub/PhantomWorld"
 current_path = "/Users/xuhua/Documents/GitHub/PhantomWorld/"
 
 [node name="about_win" type="WindowDialog" parent="."]
-visible = true
 margin_left = 457.0
 margin_top = 269.0
 margin_right = 870.0
