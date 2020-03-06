@@ -36,9 +36,13 @@ mouse_cursor/custom_image="res://UI/mouse.png"
 window/stretch/mode="2d"
 window/stretch/aspect="expand"
 
-[editor_plugins]
+[input]
 
-enabled=PoolStringArray( "dialogue_tree" )
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 

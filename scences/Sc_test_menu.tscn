@@ -55,9 +55,9 @@ margin_bottom = 1080.0
 alignment = 1
 
 [node name="Label" type="Label" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 485.0
+margin_top = 473.0
 margin_right = 252.0
-margin_bottom = 523.0
+margin_bottom = 511.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "play ground menu"
@@ -66,25 +66,32 @@ __meta__ = {
 }
 
 [node name="graphedit" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 527.0
+margin_top = 515.0
 margin_right = 252.0
-margin_bottom = 547.0
+margin_bottom = 535.0
 text = "GraphEdit_test"
 
 [node name="UI_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 551.0
+margin_top = 539.0
 margin_right = 252.0
-margin_bottom = 571.0
+margin_bottom = 559.0
 text = "UI_test"
 
-[node name="Button" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 575.0
+[node name="Time_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
+margin_top = 563.0
 margin_right = 252.0
-margin_bottom = 595.0
+margin_bottom = 583.0
+text = "Time_test"
+
+[node name="Button" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
+margin_top = 587.0
+margin_right = 252.0
+margin_bottom = 607.0
 text = "back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/graphedit" to="." method="_on_graphedit_pressed"]
 [connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/UI_test" to="." method="_on_UI_test_pressed"]
+[connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/Time_test" to="." method="_on_Time_test_pressed"]
 [connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
