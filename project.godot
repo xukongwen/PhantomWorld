@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "World_dao",
+"language": "GDScript",
+"path": "res://Script/World.gd"
+} ]
 _global_script_class_icons={
-
+"World_dao": "res://Image/dao/world.png"
 }
 
 [application]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Image/human_01.png" type="Texture" id=1]
 [ext_resource path="res://text/time_test.gd" type="Script" id=2]
@@ -14,6 +14,14 @@ polygon = PoolVector2Array( 0.845947, 1.81433, -34.2529, 310, -55.6548, -314.076
 
 [sub_resource type="OccluderPolygon2D" id=2]
 polygon = PoolVector2Array( 135.077, 3.54645, 135.077, 40.528, 2.91336, 41.1342, 2.91336, 1.72769 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 2
+emission_box_extents = Vector3( 1500, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( -30, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
 
 [node name="world" type="Node2D"]
 pause_mode = 1
@@ -97,7 +105,7 @@ margin_right = 1047.22
 margin_bottom = 902.708
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "deg"
+text = "温度："
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -166,6 +174,13 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.627451, 0.627451, 0.627451, 0.701961 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+visible = false
+position = Vector2( 792.066, 84.5895 )
+amount = 200
+lifetime = 4.0
+process_material = SubResource( 3 )
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/time-1" to="." method="_on_time1_pressed"]
 [connection signal="pressed" from="VBoxContainer/time-5" to="." method="_on_time5_pressed"]
