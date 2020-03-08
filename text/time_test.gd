@@ -2,11 +2,12 @@ extends Node2D
 
 
 var time = 0
-var time_mult = 1
+var time_mult = 60
 var paused = false
 var time_scale = 1
 
 var prev_time = 0
+var deg = 0
 
 signal time_passed(date_time)
 
@@ -25,6 +26,8 @@ class DateTime:
 #	var week
 #	var month
 #	var year
+
+	
 	
 	func _init(time):
 		var int_time = int(floor(time))
@@ -40,6 +43,7 @@ class DateTime:
 
 func _process(delta):
 	
+	# 设定游戏事件和真实时间的差距
 	time += delta*time_mult
 	
 	var date_times = []
@@ -54,21 +58,23 @@ func _process(delta):
 	
 	prev_time = time
 	
-	$time_lable.text = str("second:",DateTime.new(time).second, "min:", DateTime.new(time).minute)
+	$time_lable.text = str("日:  ", DateTime.new(time).day,"  ", "时:  ", DateTime.new(time).hour,"点")
 	
-		
+	
 
 func _on_time_passed(date_times):
 	
-	if date_times.equals(10,0,0,0):
-		$event.text = "this is noon"
+	if date_times.equals(0,0,12,0):
+		$event.text = "现在是正午"
+		
 	
-#	for dt in date_times:
-#		print(date_times)
-#		if dt.equals(10, 0, 0, 0):
-#			$event.text = "this is noon"
-#		print(dt)
-
+	deg = (0.1/60) * time_scale*time_mult
+	#$deg.text = str("每一秒增加：", deg*60," 度")
+	$deg.visible = false
+		
+	
+	$human_01/yinyang.rotation_degrees += (0.1/60)*time_scale/24*60
+	
 
 func _on_Button_pressed():
 	get_tree().quit()
@@ -77,9 +83,17 @@ func _on_Button_pressed():
 
 func _on_time1_pressed():
 	# 时间变速
+	time_scale = 1
 	Engine.set_time_scale(1)
 	
 
-
 func _on_time5_pressed():
-	Engine.set_time_scale(5)
+	time_scale = 60
+	Engine.set_time_scale(time_scale)
+
+
+func _on_light_pressed():
+	var light_stat = not $human_01/yinyang/yang/Light2D.enabled
+	$human_01/yinyang/yang/Light2D.enabled = light_stat
+	$ColorRect.visible = light_stat
+	pass # Replace with function body.
