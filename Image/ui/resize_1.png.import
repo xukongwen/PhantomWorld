@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/resize_1.png-55d29c64c927601f83d9c422beb24865.image"
+
+[deps]
+
+source_file="res://Image/ui/resize_1.png"
+dest_files=[ "res://.import/resize_1.png-55d29c64c927601f83d9c422beb24865.image" ]
+
+[params]
+

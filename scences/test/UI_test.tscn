@@ -1,14 +1,90 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://font/WenCangShuFang-2.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://font/PMingLiU.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scences/test/UI_test.gd" type="Script" id=2]
 [ext_resource path="res://font/new_dynamicfont.tres" type="DynamicFont" id=3]
-[ext_resource path="res://addons/dialogue_tree/resource/DialougeRes.tres" type="Resource" id=4]
-[ext_resource path="res://addons/dialogue_tree/scripts/dialogue.gd" type="Script" id=5]
+[ext_resource path="res://Image/phantom_os_logo_small.png" type="Texture" id=4]
+[ext_resource path="res://scences/test/GraphEdit.gd" type="Script" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+corner_detail = 7
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxLine" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 0.435294, 0.435294, 0.435294, 1 )
+
+[sub_resource type="StyleBoxLine" id=7]
+vertical = true
+
+[sub_resource type="Theme" id=8]
+GraphEdit/colors/activity = Color( 1, 1, 1, 1 )
+GraphEdit/colors/grid_major = Color( 1, 1, 1, 0.2 )
+GraphEdit/colors/grid_minor = Color( 1, 1, 1, 0.05 )
+GraphEdit/colors/selection_fill = Color( 1, 1, 1, 0.3 )
+GraphEdit/colors/selection_stroke = Color( 1, 1, 1, 0.8 )
+GraphEdit/constants/bezier_len_neg = 320
+GraphEdit/constants/bezier_len_pos = 160
+GraphEdit/constants/port_grab_distance_horizontal = 96
+GraphEdit/constants/port_grab_distance_vertical = 12
+GraphEdit/icons/minus = null
+GraphEdit/icons/more = null
+GraphEdit/icons/reset = null
+GraphEdit/icons/snap = null
+GraphEdit/styles/bg = null
+GraphNode/colors/close_color = Color( 0, 0, 0, 1 )
+GraphNode/colors/resizer_color = Color( 0, 0, 0, 1 )
+GraphNode/colors/title_color = Color( 0, 0, 0, 1 )
+GraphNode/constants/close_offset = 36
+GraphNode/constants/port_offset = 6
+GraphNode/constants/separation = 2
+GraphNode/constants/title_offset = 40
+GraphNode/fonts/title_font = null
+GraphNode/icons/ = null
+GraphNode/icons/close = null
+GraphNode/icons/port = null
+GraphNode/icons/resizer = null
+GraphNode/styles/breakpoint = null
+GraphNode/styles/comment = null
+GraphNode/styles/commentfocus = null
+GraphNode/styles/defaultfocus = null
+GraphNode/styles/defaultframe = null
+GraphNode/styles/frame = null
+GraphNode/styles/position = null
+GraphNode/styles/selectedframe = null
+HScrollBar/icons/decrement = null
+HScrollBar/icons/decrement_highlight = null
+HScrollBar/icons/increment = null
+HScrollBar/icons/increment_highlight = null
+HScrollBar/styles/ = SubResource( 2 )
+HScrollBar/styles/grabber = SubResource( 3 )
+HScrollBar/styles/grabber_highlight = SubResource( 4 )
+HScrollBar/styles/grabber_pressed = null
+HScrollBar/styles/scroll = SubResource( 5 )
+HScrollBar/styles/scroll_focus = null
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 6 )
+VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_pressed = null
+VScrollBar/styles/scroll = SubResource( 7 )
+VScrollBar/styles/scroll_focus = null
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.94902, 0.94902, 0.94902, 1 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -18,28 +94,96 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuButton" type="MenuButton" parent="."]
-margin_left = 389.0
-margin_top = 60.0
-margin_right = 452.0
-margin_bottom = 90.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+tab_align = 0
+drag_to_rearrange_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextEdit" type="Tabs" parent="VBoxContainer/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 61.0
+margin_right = -8.0
+margin_bottom = -8.0
+drag_to_rearrange_enabled = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/TextEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer"]
+margin_right = 1904.0
+margin_bottom = 45.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer"]
+margin_right = 67.0
+margin_bottom = 45.0
+texture = ExtResource( 4 )
+
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer"]
+margin_left = 75.0
+margin_right = 120.0
+margin_bottom = 45.0
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "File"
+flat = false
 align = 0
 switch_on_hover = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="About" type="MenuButton" parent="."]
-margin_left = 442.858
-margin_top = 60.5179
-margin_right = 505.858
-margin_bottom = 90.5179
+[node name="open_file" type="FileDialog" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/MenuButton"]
+margin_left = 424.222
+margin_top = 186.854
+margin_right = 951.222
+margin_bottom = 476.854
+rect_min_size = Vector2( 400, 140 )
+window_title = "打开单个文件"
+resizable = true
+mode = 0
+access = 2
+current_dir = "/Users/xuhua/Github/PhantomWorld"
+current_path = "/Users/xuhua/Github/PhantomWorld/"
+
+[node name="save_file" type="FileDialog" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/MenuButton"]
+margin_left = 424.222
+margin_top = 186.854
+margin_right = 951.222
+margin_bottom = 476.854
+rect_min_size = Vector2( 400, 140 )
+window_title = "save file"
+resizable = true
+access = 2
+current_dir = "/Users/xuhua/Github/PhantomWorld"
+current_path = "/Users/xuhua/Github/PhantomWorld/"
+
+[node name="About" type="MenuButton" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer"]
+margin_left = 128.0
+margin_right = 187.0
+margin_bottom = 45.0
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "About"
+flat = false
 align = 0
 items = [ "About", null, 0, false, false, 0, 0, null, "", false ]
 switch_on_hover = true
@@ -47,83 +191,128 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TabContainer" type="TabContainer" parent="."]
-margin_left = 393.0
-margin_top = 100.0
-margin_right = 1510.0
-margin_bottom = 1018.0
-tab_align = 0
-drag_to_rearrange_enabled = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="text edit" type="Tabs" parent="TabContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
-drag_to_rearrange_enabled = true
-
-[node name="TextEdit" type="TextEdit" parent="TabContainer/text edit"]
-margin_right = 1109.0
-margin_bottom = 838.0
-custom_fonts/font = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tabs2" type="Tabs" parent="TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 32.0
-margin_right = -4.0
-margin_bottom = -4.0
-
-[node name="Dialogue" type="Node" parent="TabContainer/Tabs2"]
-script = ExtResource( 5 )
-DialogueResource = ExtResource( 4 )
-
-[node name="open_file" type="FileDialog" parent="."]
-margin_left = 424.222
-margin_top = 186.854
-margin_right = 951.222
-margin_bottom = 476.854
-rect_min_size = Vector2( 400, 140 )
-window_title = "打开单个文件"
-mode = 0
-access = 2
-current_dir = "/Users/xuhua/Documents/GitHub/PhantomWorld"
-current_path = "/Users/xuhua/Documents/GitHub/PhantomWorld/"
-
-[node name="save_file" type="FileDialog" parent="."]
-margin_left = 424.222
-margin_top = 186.854
-margin_right = 951.222
-margin_bottom = 476.854
-rect_min_size = Vector2( 400, 140 )
-window_title = "save file"
-access = 2
-current_dir = "/Users/xuhua/Documents/GitHub/PhantomWorld"
-current_path = "/Users/xuhua/Documents/GitHub/PhantomWorld/"
-
-[node name="about_win" type="WindowDialog" parent="."]
-margin_left = 457.0
+[node name="about_win" type="WindowDialog" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/About"]
+margin_left = 420.0
 margin_top = 269.0
-margin_right = 870.0
+margin_right = 833.0
 margin_bottom = 461.0
 window_title = "About"
 
-[node name="Label" type="Label" parent="about_win"]
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/About/about_win"]
 margin_left = 144.0
 margin_top = 67.0
 margin_right = 308.0
 margin_bottom = 81.0
 text = "this is my first app"
 autowrap = true
-[connection signal="file_selected" from="open_file" to="." method="_on_open_file_file_selected"]
-[connection signal="file_selected" from="save_file" to="." method="_on_save_file_file_selected"]
+
+[node name="Button" type="Button" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer"]
+margin_left = 195.0
+margin_right = 270.0
+margin_bottom = 45.0
+text = "Back"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer"]
+margin_top = 53.0
+margin_right = 1904.0
+margin_bottom = 1003.0
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/TabContainer/TextEdit/VBoxContainer/CenterContainer"]
+margin_left = 252.0
+margin_right = 1652.0
+margin_bottom = 950.0
+rect_min_size = Vector2( 1400, 950 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 1 )
+syntax_highlighting = true
+fold_gutter = true
+wrap_enabled = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="GraphEdit" type="Tabs" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 61.0
+margin_right = -8.0
+margin_bottom = -8.0
+script = ExtResource( 5 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/GraphEdit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer"]
+margin_right = 1904.0
+margin_bottom = 45.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer"]
+margin_right = 67.0
+margin_bottom = 45.0
+texture = ExtResource( 4 )
+
+[node name="b_addnode" type="Button" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer"]
+margin_left = 75.0
+margin_right = 201.0
+margin_bottom = 45.0
+text = "add node"
+
+[node name="b_new" type="Button" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer"]
+margin_left = 209.0
+margin_right = 348.0
+margin_bottom = 45.0
+text = "new graph"
+
+[node name="b_save" type="Button" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer"]
+margin_left = 356.0
+margin_right = 429.0
+margin_bottom = 45.0
+text = "save"
+
+[node name="b_load" type="Button" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer"]
+margin_left = 437.0
+margin_right = 508.0
+margin_bottom = 45.0
+text = "load"
+
+[node name="b_info" type="Button" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer"]
+margin_left = 516.0
+margin_right = 582.0
+margin_bottom = 45.0
+text = "info"
+
+[node name="b_snap" type="Button" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer"]
+margin_left = 590.0
+margin_right = 666.0
+margin_bottom = 45.0
+text = "snap"
+
+[node name="b_quit" type="Button" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer"]
+margin_left = 674.0
+margin_right = 748.0
+margin_bottom = 45.0
+text = "back"
+
+[node name="GraphEdit" type="GraphEdit" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer"]
+margin_top = 53.0
+margin_right = 1904.0
+margin_bottom = 1013.0
+rect_min_size = Vector2( 1900, 960 )
+theme = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
+custom_colors/grid_major = Color( 0.533333, 0.533333, 0.533333, 1 )
+custom_colors/grid_minor = Color( 0.847059, 0.843137, 0.843137, 1 )
+right_disconnects = true
+scroll_offset = Vector2( -0.00012207, 0 )
+[connection signal="file_selected" from="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/MenuButton/open_file" to="." method="_on_open_file_file_selected"]
+[connection signal="file_selected" from="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/MenuButton/save_file" to="." method="_on_save_file_file_selected"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_addnode" to="VBoxContainer/TabContainer/GraphEdit" method="_on_b_addnode_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_snap" to="." method="_on_b_snap_pressed"]

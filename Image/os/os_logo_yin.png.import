@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/os_logo_yin.png-bb2ff353ef6479340668e4a82912b317.image"
+
+[deps]
+
+source_file="res://Image/os/os_logo_yin.png"
+dest_files=[ "res://.import/os_logo_yin.png-bb2ff353ef6479340668e4a82912b317.image" ]
+
+[params]
+

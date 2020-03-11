@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/close_white.png-29683059ce31f3cacf468e2f309927be.image"
+
+[deps]
+
+source_file="res://Image/ui/close_white.png"
+dest_files=[ "res://.import/close_white.png-29683059ce31f3cacf468e2f309927be.image" ]
+
+[params]
+

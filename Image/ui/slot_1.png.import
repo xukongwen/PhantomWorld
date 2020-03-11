@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/slot_1.png-9d2413657bd7535b710b2a63123130f5.image"
+
+[deps]
+
+source_file="res://Image/ui/slot_1.png"
+dest_files=[ "res://.import/slot_1.png-9d2413657bd7535b710b2a63123130f5.image" ]
+
+[params]
+
