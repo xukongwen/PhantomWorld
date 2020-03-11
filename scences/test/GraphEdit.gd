@@ -38,13 +38,13 @@ func _on_b_save_pressed():
 	var file = File.new()
 	
 	for i in graph_nodes:
-		#print(node.get_node("TextEdit"))
-		var n = i.get_node("TextEdit")
+		#print(i.get_child(0).get_child(0).text)
+		var n = i.get_child(0).get_child(0).text
 		var p = i.rect_position
 		var s = i.rect_size
 		
 		var n_data = {
-			"node_text": i.text, 
+			"node_text": n, 
 			"node_pos_x": p.x,
 			"node_pos_y": p.y,
 			"node_width": s.x,
@@ -85,7 +85,7 @@ func load_nodes():
 	# 读node信息部分
 	for i in all_save_data[0]:
 		var node = spn.instance()
-		node.get_node("TextEdit").text = i["node_text"]
+		node.get_child(0).get_child(0).text = i["node_text"]
 		# 奇怪，用offset就行，rect_positon就不行
 		node.offset = Vector2(i["node_pos_x"],i["node_pos_y"])
 		# 大小也奇怪，必须用rect_min_size而rect_size就不行

@@ -233,6 +233,7 @@ __meta__ = {
 }
 
 [node name="GraphEdit" type="Tabs" parent="VBoxContainer/TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
