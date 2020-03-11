@@ -1,10 +1,18 @@
 extends Control
 
 
-
 func _ready():
-	$logo_play.play("logo_move")
+	pass
+	#$logo_play.play("logo_move")
+
+		
+		
 	
+	
+	
+	
+func _process(delta):
+	pass
 
 func _input(event):
 	if event is InputEventKey:

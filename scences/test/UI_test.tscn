@@ -233,14 +233,12 @@ __meta__ = {
 }
 
 [node name="GraphEdit" type="Tabs" parent="VBoxContainer/TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
 margin_top = 61.0
 margin_right = -8.0
 margin_bottom = -8.0
-script = ExtResource( 5 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/GraphEdit"]
 anchor_right = 1.0
@@ -311,8 +309,13 @@ custom_colors/grid_major = Color( 0.533333, 0.533333, 0.533333, 1 )
 custom_colors/grid_minor = Color( 0.847059, 0.843137, 0.843137, 1 )
 right_disconnects = true
 scroll_offset = Vector2( -0.00012207, 0 )
+script = ExtResource( 5 )
 [connection signal="file_selected" from="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/MenuButton/open_file" to="." method="_on_open_file_file_selected"]
 [connection signal="file_selected" from="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/MenuButton/save_file" to="." method="_on_save_file_file_selected"]
 [connection signal="pressed" from="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_addnode" to="VBoxContainer/TabContainer/GraphEdit" method="_on_b_addnode_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_addnode" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_b_addnode_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_save" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_b_save_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_load" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_b_load_pressed"]
 [connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_snap" to="." method="_on_b_snap_pressed"]
+[connection signal="connection_request" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_GraphEdit_connection_request"]
+[connection signal="disconnection_request" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_GraphEdit_disconnection_request"]

@@ -13,23 +13,10 @@ onready var about_win = get_node("VBoxContainer/TabContainer/TextEdit/VBoxContai
 onready var p_edit = $VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit
 
 
-
-
 func _ready():
 	update_title()
 	# 下面这个太牛了，可以隐藏那些特别难看的图标
-#
-#	print(p_edit.get_child(0).get_child(2))
-#	print("children: ",p_edit.get_children())
-#	var p_children = p_edit.get_children()
-#	for child in p_children:
-#		if child.
-#
-	#p_edit.get_child(0).get_child(2).visible = false
-	
-	
-
-	
+	p_edit.get_zoom_hbox().visible = false
 	
 	
 	# 这里是menu添加下拉菜单选项
@@ -119,6 +106,5 @@ func _on_b_snap_pressed():
 	var snap = not p_edit.use_snap
 	p_edit.use_snap = snap
 	
-
-
-	
+func _on_GraphEdit_disconnection_request(from, from_slot, to, to_slot):
+	p_edit.disconnect_node(from, from_slot, to, to_slot)

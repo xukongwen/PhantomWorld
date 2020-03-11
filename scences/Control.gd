@@ -16,7 +16,7 @@ func _on_pressed(scene_to_load):
 	$ColorRect.fade_in()
 
 
-# 退出游戏
+# 退出游戏  dd
 func _on_Button_pressed():
 	get_tree().quit()
 

@@ -2,9 +2,14 @@ extends TextureButton
 
 
 func _ready():
-	pass
+	connect("mouse_enter", self, "_mouse_enter")
+
+func _mouse_enter():
+	$hover.play()
 
 
 func _on_TextureButton_pressed():
 	$click.play()
-	pass # Replace with function body.
+	$b_click_ani.set_frame(0)
+	$b_click_ani.play()
+	
