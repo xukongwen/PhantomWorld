@@ -2,14 +2,8 @@ extends Control
 
 
 func _ready():
-	pass
-	#$logo_play.play("logo_move")
+	$"8gua/8gua_roll".play("8_roll")
 
-		
-		
-	
-	
-	
 	
 func _process(delta):
 	pass

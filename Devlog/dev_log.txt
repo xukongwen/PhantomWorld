@@ -19,4 +19,21 @@ p_edit.get_zoom_hbox().visible = false
 
 在考虑系统级别的app，但是有点脑袋大。
 
+傍晚又有些进步
+
+1 终于知道如何调整textedit的大小跟随node大小调整了
+get_node("VBoxContainer/TextEdit").rect_min_size.y = self.get_rect().size.y - 45
+
+2 实现了textruebutton hover时发出声音
+就是在button的信号里有mouse_entered()，弄这个就行了。
+
+于是今天解决了三个问题。
+今天就到这里了。
+
+然而晚上又弄了一下先天八卦旋转，视觉感爆棚啊，很想看到以后他自动生成的动画！
+
+
+
+
+
 
