@@ -275,11 +275,43 @@ margin_right = 429.0
 margin_bottom = 45.0
 text = "save"
 
+[node name="save_g" type="FileDialog" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_save"]
+margin_left = -45.0226
+margin_top = 145.201
+margin_right = 538.977
+margin_bottom = 571.201
+rect_min_size = Vector2( 400, 140 )
+window_title = "保存文件"
+resizable = true
+access = 2
+current_dir = "/Users/xuhua/Github/PhantomWorld"
+current_file = "PhantomWorld"
+current_path = "/Users/xuhua/Github/PhantomWorld/PhantomWorld"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="b_load" type="Button" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer"]
 margin_left = 437.0
 margin_right = 508.0
 margin_bottom = 45.0
 text = "load"
+
+[node name="load_g" type="FileDialog" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_load"]
+visible = true
+margin_right = 579.0
+margin_bottom = 426.0
+rect_min_size = Vector2( 400, 140 )
+window_title = "打开单个文件"
+resizable = true
+mode = 0
+access = 2
+current_dir = "/Users/xuhua/Github/PhantomWorld/Devlog"
+current_file = "dev_log.txt"
+current_path = "/Users/xuhua/Github/PhantomWorld/Devlog/dev_log.txt"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="b_info" type="Button" parent="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer"]
 margin_left = 516.0
@@ -315,8 +347,11 @@ script = ExtResource( 5 )
 [connection signal="file_selected" from="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/MenuButton/save_file" to="." method="_on_save_file_file_selected"]
 [connection signal="pressed" from="VBoxContainer/TabContainer/TextEdit/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_addnode" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_b_addnode_pressed"]
+[connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_new" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_b_new_pressed"]
 [connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_save" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_b_save_pressed"]
+[connection signal="file_selected" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_save/save_g" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_save_g_file_selected"]
 [connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_load" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_b_load_pressed"]
+[connection signal="file_selected" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_load/load_g" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_load_g_file_selected"]
 [connection signal="pressed" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/HBoxContainer/b_snap" to="." method="_on_b_snap_pressed"]
 [connection signal="connection_request" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_GraphEdit_connection_request"]
 [connection signal="disconnection_request" from="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" to="VBoxContainer/TabContainer/GraphEdit/VBoxContainer/GraphEdit" method="_on_GraphEdit_disconnection_request"]

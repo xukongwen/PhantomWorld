@@ -26,11 +26,7 @@ run/main_scene="res://scences/os/os_load.tscn"
 boot_splash/image="res://Image/phantom_os_splash.png"
 boot_splash/use_filter=false
 config/icon="res://UI/logo.png"
-config/macos_native_icon="res://UI/icon.icns"
-
-[autoload]
-
-save_load_test="*res://Script/save_load_test.gd"
+config/macos_native_icon="res://UI/logo.icns"
 
 [display]
 

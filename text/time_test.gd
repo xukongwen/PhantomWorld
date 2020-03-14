@@ -29,8 +29,6 @@ func _process(delta):
 	emit_signal("time_passed", World_dao.new(time))
 	
 	$time_lable.text = str("日:  ", World_dao.new(time).day,"  ", "时:  ", World_dao.new(time).hour,"点")
-	
-	#deg = (0.1/60) * time_scale*time_mult
 		
 	# 这里是把太阳，月亮的位置（角度）和游戏时间匹配
 	$human_01/yinyang.rotation_degrees += (0.1/60)*time_scale/24*60
