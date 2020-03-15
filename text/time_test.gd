@@ -54,9 +54,7 @@ func temp(time):
 	$deg.text = str(tempture)
 
 func _on_Button_pressed():
-	get_tree().quit()
-	
-
+	get_tree().change_scene("res://scences/Sc_test_menu.tscn")
 
 func _on_time1_pressed():
 	# 时间变速

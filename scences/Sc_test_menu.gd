@@ -20,3 +20,6 @@ func _on_UI_test_pressed():
 func _on_Time_test_pressed():
 	get_tree().change_scene("res://text/time_test.tscn")
 	
+
+func _on_quit_pressed():
+	get_tree().quit()

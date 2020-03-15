@@ -18,7 +18,6 @@ func _input(event):
 #				start()
 			
 func start():
-	print("hi,world!")
-	get_tree().change_scene("res://scences/Control.tscn")
+	get_tree().change_scene("res://scences/Sc_test_menu.tscn")
 	
 

@@ -110,4 +110,16 @@ func _on_load_g_file_selected(path):
 		for x in range(connect_to.size()):
 			connect_node(connect_from,0,connect_to[x],0)
 			
-	
+			
+#快捷键设定
+func _unhandled_input(event : InputEvent) -> void:
+	if event is InputEventKey:
+		if Input.is_action_pressed("save"):
+			save_pop.popup()
+			save_pop.current_file = save_pop.get_text()+'.json'
+			
+		if Input.is_action_pressed("load"):
+			load_pop.popup()
+		
+		if Input.is_action_pressed("new"):
+			clear_all_nodes()
