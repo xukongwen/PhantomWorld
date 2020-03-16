@@ -23,3 +23,8 @@ func _on_Time_test_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_State_test_pressed():
+	get_tree().change_scene("res://scences/test_field/state_test1D.tscn")
+	

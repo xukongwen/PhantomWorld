@@ -50,22 +50,29 @@ margin_bottom = 1080.0
 alignment = 1
 
 [node name="UI_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 476.0
+margin_top = 454.0
 margin_right = 185.0
-margin_bottom = 513.0
+margin_bottom = 491.0
 text = "TextEditor_test"
 
 [node name="Time_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 521.0
+margin_top = 499.0
 margin_right = 185.0
-margin_bottom = 558.0
+margin_bottom = 536.0
 text = "Time_test"
 
-[node name="quit" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 566.0
+[node name="State_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
+margin_top = 544.0
 margin_right = 185.0
-margin_bottom = 603.0
+margin_bottom = 581.0
+text = "State_test"
+
+[node name="quit" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
+margin_top = 589.0
+margin_right = 185.0
+margin_bottom = 626.0
 text = "Bye"
 [connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/UI_test" to="." method="_on_UI_test_pressed"]
 [connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/Time_test" to="." method="_on_Time_test_pressed"]
+[connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/State_test" to="." method="_on_State_test_pressed"]
 [connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

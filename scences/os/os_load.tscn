@@ -88,7 +88,7 @@ __meta__ = {
 }
 
 [node name="os_logo_yang" type="Sprite" parent="."]
-position = Vector2( -52.5623, 533.543 )
+position = Vector2( -86.4086, 550.231 )
 texture = ExtResource( 3 )
 script = ExtResource( 11 )
 
@@ -123,7 +123,6 @@ stream = ExtResource( 12 )
 
 [node name="8gua" type="Sprite" parent="."]
 position = Vector2( 949.253, 531.73 )
-rotation = 3.54634
 texture = ExtResource( 13 )
 
 [node name="8gua_roll" type="AnimationPlayer" parent="8gua"]

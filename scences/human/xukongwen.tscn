@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scences/human/being.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scences/human/xukongwen.gd" type="Script" id=2]
+[ext_resource path="res://font/WenCangShuFang-2.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[node name="being" instance=ExtResource( 1 )]
+collision_mask = 14
+script = ExtResource( 2 )
+
+[node name="Timer" type="Timer" parent="." index="5"]
+autostart = true
+
+[node name="State_panle" type="Panel" parent="." index="6"]
+margin_left = 43.0
+margin_top = -105.0
+margin_right = 149.0
+margin_bottom = -65.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="State" type="Label" parent="State_panle" index="0"]
+margin_left = 8.0
+margin_top = 6.0
+margin_right = 69.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 1 )
+text = "state"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Think_panle" type="Panel" parent="." index="7"]
+margin_left = -69.0
+margin_top = -245.0
+margin_right = 187.0
+margin_bottom = -205.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thinking" type="Label" parent="Think_panle" index="0"]
+margin_left = 8.0
+margin_top = 6.0
+margin_right = 244.0
+margin_bottom = 31.0
+custom_fonts/font = SubResource( 1 )
+text = "thinking"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

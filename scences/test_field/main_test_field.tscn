@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scences/test_field/main_test_field.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_top = 1029.36
+margin_right = 1920.0
+margin_bottom = 1079.36
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save2" type="Button" parent="HBoxContainer"]
+margin_right = 169.0
+margin_bottom = 50.0
+text = "scence_name"
+
+[node name="save" type="Button" parent="HBoxContainer"]
+margin_left = 177.0
+margin_right = 250.0
+margin_bottom = 50.0
+text = "save"
+
+[node name="load" type="Button" parent="HBoxContainer"]
+margin_left = 258.0
+margin_right = 329.0
+margin_bottom = 50.0
+text = "load"
+
+[node name="back" type="Button" parent="HBoxContainer"]
+margin_left = 337.0
+margin_right = 411.0
+margin_bottom = 50.0
+text = "back"
+
+[node name="quit" type="Button" parent="HBoxContainer"]
+margin_left = 419.0
+margin_right = 485.0
+margin_bottom = 50.0
+text = "quit"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+margin_left = 493.0
+margin_right = 501.0
+margin_bottom = 50.0
+
+[node name="func1" type="Button" parent="HBoxContainer"]
+margin_left = 509.0
+margin_right = 593.0
+margin_bottom = 50.0
+text = "func1"
+[connection signal="pressed" from="HBoxContainer/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]
