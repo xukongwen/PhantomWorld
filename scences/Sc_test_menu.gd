@@ -28,3 +28,8 @@ func _on_quit_pressed():
 func _on_State_test_pressed():
 	get_tree().change_scene("res://scences/test_field/state_test1D.tscn")
 	
+
+
+func _on_World_test_pressed():
+	get_tree().change_scene("res://3d/world_test_1.tscn")
+	

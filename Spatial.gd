@@ -44,7 +44,7 @@ func _ready():
 func _process(delta):
 	$Rotate.rotate_y(delta*0.5)
 	
-	
-	
-	
-	
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://scences/Sc_test_menu.tscn")

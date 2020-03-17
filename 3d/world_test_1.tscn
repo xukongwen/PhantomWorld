@@ -20,3 +20,18 @@ far = 8192.0
 [node name="MeshInstance" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
 material/0 = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Control"]
+margin_left = 1710.29
+margin_top = 1002.61
+margin_right = 1784.29
+margin_bottom = 1039.61
+text = "back"
+[connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]
