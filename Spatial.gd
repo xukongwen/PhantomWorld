@@ -1,3 +1,4 @@
+tool
 extends Spatial
 
 
@@ -37,12 +38,12 @@ func _ready():
 	var mesh_instance = MeshInstance.new()
 	mesh_instance.mesh = surface_tool.commit()
 	mesh_instance.set_surface_material(0, load("res://3d/shader/test1.tres"))
-	mesh_instance.create_convex_collision()
+	mesh_instance.create_trimesh_collision()
 	add_child(mesh_instance)
+
 	
-	
-func _process(delta):
-	$Rotate.rotate_y(delta*0.5)
+#func _process(delta):
+#	$Rotate.rotate_y(delta*0.5)
 	
 
 
