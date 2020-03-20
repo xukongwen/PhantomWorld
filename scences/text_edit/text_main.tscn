@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scences/text_edit/text_editor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://font/PMingLiU.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scences/text_edit/Tab.tres" type="Theme" id=3]
+[ext_resource path="res://scences/text_edit/graph_editor.tscn" type="PackedScene" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.87451, 0.0745098, 0.0745098, 1 )
+
+[sub_resource type="Theme" id=4]
+Tabs/colors/font_color_bg = Color( 0.69, 0.69, 0.69, 1 )
+Tabs/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Tabs/colors/font_color_fg = Color( 0.94, 0.94, 0.94, 1 )
+Tabs/constants/hseparation = 8
+Tabs/constants/label_valign_bg = 4
+Tabs/constants/label_valign_fg = 0
+Tabs/constants/top_margin = 48
+Tabs/fonts/font = null
+Tabs/icons/close = null
+Tabs/icons/decrement = null
+Tabs/icons/decrement_highlight = null
+Tabs/icons/increment = null
+Tabs/icons/increment_highlight = null
+Tabs/styles/button = null
+Tabs/styles/button_pressed = null
+Tabs/styles/panel = SubResource( 2 )
+Tabs/styles/tab_bg = SubResource( 3 )
+Tabs/styles/tab_disabled = null
+Tabs/styles/tab_fg = null
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 47.0
+theme = ExtResource( 3 )
+tab_align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="文本一" parent="VBoxContainer/TabContainer" instance=ExtResource( 1 )]
+margin_left = 5.0
+margin_top = 42.0
+margin_right = -5.0
+margin_bottom = -5.0
+
+[node name="文本二" parent="VBoxContainer/TabContainer" instance=ExtResource( 1 )]
+visible = false
+margin_left = 5.0
+margin_top = 42.0
+margin_right = -5.0
+margin_bottom = -5.0
+
+[node name="GraphEdit" parent="VBoxContainer/TabContainer" instance=ExtResource( 4 )]
+visible = false
+margin_left = 5.0
+margin_top = 42.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_min_size = Vector2( 1900, 1020 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+scroll_offset = Vector2( 0, 0 )
+
+[node name="+" type="Tabs" parent="VBoxContainer/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 42.0
+margin_right = -5.0
+margin_bottom = -5.0
+theme = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
+tab_align = 0
+drag_to_rearrange_enabled = true

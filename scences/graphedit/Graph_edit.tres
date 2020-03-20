@@ -1,0 +1,77 @@
+[gd_resource type="Theme" load_steps=8 format=2]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.909804, 0.909804, 0.909804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+corner_detail = 7
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxLine" id=5]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 0.435294, 0.435294, 0.435294, 1 )
+
+[sub_resource type="StyleBoxLine" id=7]
+vertical = true
+
+[resource]
+GraphEdit/colors/activity = Color( 0.580392, 0.537255, 0.537255, 1 )
+GraphEdit/colors/grid_major = Color( 0.152941, 0.152941, 0.152941, 0.905882 )
+GraphEdit/colors/grid_minor = Color( 0.247059, 0.247059, 0.247059, 0.145098 )
+GraphEdit/colors/selection_fill = Color( 1, 1, 1, 0.3 )
+GraphEdit/colors/selection_stroke = Color( 1, 1, 1, 0.8 )
+GraphEdit/constants/bezier_len_neg = 320
+GraphEdit/constants/bezier_len_pos = 160
+GraphEdit/constants/port_grab_distance_horizontal = 96
+GraphEdit/constants/port_grab_distance_vertical = 12
+GraphEdit/icons/minus = null
+GraphEdit/icons/more = null
+GraphEdit/icons/reset = null
+GraphEdit/icons/snap = null
+GraphEdit/styles/bg = SubResource( 8 )
+GraphNode/colors/close_color = Color( 0, 0, 0, 1 )
+GraphNode/colors/resizer_color = Color( 0, 0, 0, 1 )
+GraphNode/colors/title_color = Color( 0, 0, 0, 1 )
+GraphNode/constants/close_offset = 36
+GraphNode/constants/port_offset = 6
+GraphNode/constants/separation = 2
+GraphNode/constants/title_offset = 40
+GraphNode/fonts/title_font = null
+GraphNode/icons/ = null
+GraphNode/icons/close = null
+GraphNode/icons/port = null
+GraphNode/icons/resizer = null
+GraphNode/styles/breakpoint = null
+GraphNode/styles/comment = null
+GraphNode/styles/commentfocus = null
+GraphNode/styles/defaultfocus = null
+GraphNode/styles/defaultframe = null
+GraphNode/styles/frame = null
+GraphNode/styles/position = null
+GraphNode/styles/selectedframe = null
+HScrollBar/icons/decrement = null
+HScrollBar/icons/decrement_highlight = null
+HScrollBar/icons/increment = null
+HScrollBar/icons/increment_highlight = null
+HScrollBar/styles/ = SubResource( 2 )
+HScrollBar/styles/grabber = SubResource( 3 )
+HScrollBar/styles/grabber_highlight = SubResource( 4 )
+HScrollBar/styles/grabber_pressed = null
+HScrollBar/styles/scroll = SubResource( 5 )
+HScrollBar/styles/scroll_focus = null
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 6 )
+VScrollBar/styles/grabber_highlight = null
+VScrollBar/styles/grabber_pressed = null
+VScrollBar/styles/scroll = SubResource( 7 )
+VScrollBar/styles/scroll_focus = null
