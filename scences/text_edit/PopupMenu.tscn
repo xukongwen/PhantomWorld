@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://font/PMingLiU.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="StyleBoxFlat" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=3]
+default_font = SubResource( 2 )
+PopupMenu/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
+PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
+PopupMenu/colors/font_color_hover = Color( 0.88, 0.88, 0.88, 1 )
+PopupMenu/constants/hseparation = 8
+PopupMenu/constants/vseparation = 8
+PopupMenu/fonts/font = null
+PopupMenu/icons/checked = null
+PopupMenu/icons/radio_checked = null
+PopupMenu/icons/radio_unchecked = null
+PopupMenu/icons/submenu = null
+PopupMenu/icons/unchecked = null
+PopupMenu/styles/hover = SubResource( 4 )
+PopupMenu/styles/labeled_separator_left = SubResource( 5 )
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = SubResource( 1 )
+PopupMenu/styles/panel_disabled = null
+PopupMenu/styles/separator = null
+
+[node name="PopupMenu" type="PopupMenu"]
+margin_left = 522.123
+margin_top = 267.818
+margin_right = 810.123
+margin_bottom = 594.818
+theme = SubResource( 3 )
+items = [ "打开", null, 0, false, false, 0, 0, null, "", false ]

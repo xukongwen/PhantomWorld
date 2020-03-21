@@ -5,7 +5,7 @@
 [ext_resource path="res://scences/text_edit/Tab.tres" type="Theme" id=3]
 [ext_resource path="res://scences/text_edit/graph_editor.tscn" type="PackedScene" id=4]
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -34,7 +34,7 @@ Tabs/styles/tab_bg = SubResource( 3 )
 Tabs/styles/tab_disabled = null
 Tabs/styles/tab_fg = null
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
@@ -47,7 +47,7 @@ __meta__ = {
 [node name="Panel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 5 )
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -56,6 +56,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -90,7 +91,6 @@ margin_bottom = -5.0
 rect_min_size = Vector2( 1900, 1020 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-scroll_offset = Vector2( 0, 0 )
 
 [node name="+" type="Tabs" parent="VBoxContainer/TabContainer"]
 visible = false
@@ -101,6 +101,6 @@ margin_top = 42.0
 margin_right = -5.0
 margin_bottom = -5.0
 theme = SubResource( 4 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 5 )
 tab_align = 0
 drag_to_rearrange_enabled = true

@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=8 format=2]
 
-[sub_resource type="StyleBoxFlat" id=8]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.909804, 0.909804, 0.909804, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -35,7 +35,7 @@ GraphEdit/icons/minus = null
 GraphEdit/icons/more = null
 GraphEdit/icons/reset = null
 GraphEdit/icons/snap = null
-GraphEdit/styles/bg = SubResource( 8 )
+GraphEdit/styles/bg = SubResource( 1 )
 GraphNode/colors/close_color = Color( 0, 0, 0, 1 )
 GraphNode/colors/resizer_color = Color( 0, 0, 0, 1 )
 GraphNode/colors/title_color = Color( 0, 0, 0, 1 )

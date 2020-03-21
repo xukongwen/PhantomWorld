@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://scences/text_edit/Button_1.tres" type="Theme" id=1]
 [ext_resource path="res://scences/Sc_test_menu.gd" type="Script" id=2]
 [ext_resource path="res://scences/Node2D_draw_line.gd" type="Script" id=3]
 [ext_resource path="res://Image/human_01.png" type="Texture" id=4]
@@ -31,53 +32,63 @@ __meta__ = {
 }
 
 [node name="human" type="TextureRect" parent="GraphEdit/HBoxContainer"]
-margin_left = 497.0
-margin_right = 722.0
+margin_left = 541.0
+margin_right = 766.0
 margin_bottom = 1080.0
 texture = ExtResource( 4 )
 stretch_mode = 4
 
 [node name="Container" type="Container" parent="GraphEdit/HBoxContainer"]
-margin_left = 730.0
-margin_right = 1230.0
+margin_left = 774.0
+margin_right = 1274.0
 margin_bottom = 1080.0
 rect_min_size = Vector2( 500, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GraphEdit/HBoxContainer"]
-margin_left = 1238.0
-margin_right = 1423.0
+margin_left = 1282.0
+margin_right = 1378.0
 margin_bottom = 1080.0
 alignment = 1
 
 [node name="UI_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 431.0
-margin_right = 185.0
-margin_bottom = 468.0
-text = "TextEditor_test"
+margin_top = 481.0
+margin_right = 96.0
+margin_bottom = 498.0
+theme = ExtResource( 1 )
+text = "文字编辑"
+align = 2
 
 [node name="Time_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 476.0
-margin_right = 185.0
-margin_bottom = 513.0
-text = "Time_test"
+margin_top = 506.0
+margin_right = 96.0
+margin_bottom = 523.0
+theme = ExtResource( 1 )
+text = "时间事件实验"
+align = 2
 
 [node name="State_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 521.0
-margin_right = 185.0
-margin_bottom = 558.0
-text = "State_test"
+margin_top = 531.0
+margin_right = 96.0
+margin_bottom = 548.0
+theme = ExtResource( 1 )
+text = "状态机实验"
+align = 2
 
 [node name="World_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 566.0
-margin_right = 185.0
-margin_bottom = 603.0
-text = "World_test"
+margin_top = 556.0
+margin_right = 96.0
+margin_bottom = 573.0
+theme = ExtResource( 1 )
+text = "世界生成实验"
+align = 2
 
 [node name="quit" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 611.0
-margin_right = 185.0
-margin_bottom = 648.0
-text = "Bye"
+margin_top = 581.0
+margin_right = 96.0
+margin_bottom = 598.0
+theme = ExtResource( 1 )
+text = "休息"
+align = 2
 [connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/UI_test" to="." method="_on_UI_test_pressed"]
 [connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/Time_test" to="." method="_on_Time_test_pressed"]
 [connection signal="pressed" from="GraphEdit/HBoxContainer/VBoxContainer/State_test" to="." method="_on_State_test_pressed"]

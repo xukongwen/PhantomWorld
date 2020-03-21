@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://font/PMingLiU.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+FileDialog/colors/files_disabled = Color( 0, 0, 0, 0.7 )
+FileDialog/colors/folder_icon_modulate = Color( 0.694118, 0.027451, 0.027451, 1 )
+FileDialog/icons/folder = null
+FileDialog/icons/parent_folder = null
+FileDialog/icons/reload = null
+FileDialog/icons/toggle_hidden = null
+
+[node name="save_as_file" type="FileDialog"]
+margin_left = 542.057
+margin_top = 258.218
+margin_right = 1337.06
+margin_bottom = 801.218
+rect_min_size = Vector2( 400, 140 )
+theme = SubResource( 2 )
+window_title = "保存文件"
+resizable = true
+access = 2
+current_dir = "/Users/xuhua/Github/PhantomWorld"
+current_path = "/Users/xuhua/Github/PhantomWorld/"

@@ -11,7 +11,7 @@
 size = 24
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.94902, 0.94902, 0.94902, 1 )
 
 [node name="Control" type="Control"]
@@ -265,7 +265,7 @@ margin_right = 1904.0
 margin_bottom = 1013.0
 rect_min_size = Vector2( 1900, 960 )
 theme = ExtResource( 6 )
-custom_styles/bg = SubResource( 9 )
+custom_styles/bg = SubResource( 2 )
 custom_colors/grid_major = Color( 0.533333, 0.533333, 0.533333, 1 )
 custom_colors/grid_minor = Color( 0.847059, 0.843137, 0.843137, 1 )
 right_disconnects = true
