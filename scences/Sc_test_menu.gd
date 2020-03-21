@@ -1,8 +1,9 @@
 extends Control
 
-
 func _ready():
 	$GraphEdit.get_zoom_hbox().visible = false
+	
+
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://scences/Control.tscn")
