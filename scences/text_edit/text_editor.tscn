@@ -111,7 +111,6 @@ syntax_highlighting = true
 wrap_enabled = true
 
 [node name="text_menu" parent="." instance=ExtResource( 6 )]
-visible = true
 items = [ "新建", null, 0, false, false, 0, 0, null, "", false, "打开", null, 0, false, false, 1, 0, null, "", false, "储存", null, 0, false, false, 2, 0, null, "", false, "另存", null, 0, false, false, 3, 0, null, "", false, "返回", null, 0, false, false, 4, 0, null, "", false ]
 
 [node name="open_file" parent="." instance=ExtResource( 4 )]

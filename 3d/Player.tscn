@@ -1,11 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Script/3d_Person_Controller.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Image/human_01.png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 1.02126
-
-[sub_resource type="CapsuleMesh" id=2]
 
 [node name="Player" type="KinematicBody"]
 
@@ -13,10 +12,9 @@ radius = 1.02126
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-mesh = SubResource( 2 )
-material/0 = null
-
 [node name="Controller" parent="." instance=ExtResource( 1 )]
 PlayerPath = NodePath("..")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+texture = ExtResource( 2 )

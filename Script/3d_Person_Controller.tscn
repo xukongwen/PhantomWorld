@@ -11,3 +11,4 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.456, 0 )
 [node name="Camera" type="Camera" parent="InnerGimbal"]
 transform = Transform( 1, 0, 0, 0, 0.961262, 0.275637, 0, -0.275637, 0.961262, 0, 0.4, 4 )
 current = true
+far = 2863.4
