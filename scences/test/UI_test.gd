@@ -31,6 +31,7 @@ func _ready():
 	menu.get_popup().connect("id_pressed",self,"_on_item_pressed")
 	menu_about.get_popup().connect("id_pressed",self,"_on_item_about")
 	
+	
 
 	
 # 更新title

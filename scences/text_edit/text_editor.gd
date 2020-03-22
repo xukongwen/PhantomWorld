@@ -1,20 +1,43 @@
 extends Control
 
-onready var new = get_node("Panel/VBoxContainer/HBoxContainer/new")
-onready var open = get_node("Panel/VBoxContainer/HBoxContainer/open")
-onready var save = get_node("Panel/VBoxContainer/HBoxContainer/save")
-onready var save_as = get_node("Panel/VBoxContainer/HBoxContainer/save_as")
-onready var back = get_node("Panel/VBoxContainer/HBoxContainer/back")
 onready var text_edit = get_node("Panel/VBoxContainer/CenterContainer/TextEdit")
-onready var save_as_file = get_node("Panel/VBoxContainer/HBoxContainer/save_as/save_as_file")
-onready var open_file = get_node("Panel/VBoxContainer/HBoxContainer/open/open_file")
+onready var save_as_file = get_node("save_as_file")
+onready var open_file = get_node("open_file")
+onready var pop_menu = get_node("text_menu")
 
 var app_name = "Phantom Text Editor"
 const UNTITLE = 'untitled'
 var current_name = UNTITLE
+var IsMouseInTexteditoer = false
 
 func _ready():
-	pass
+	pop_menu.connect("id_pressed",self,"_on_item_pressed")
+	
+	
+func _input(event):
+	if IsMouseInTexteditoer and \
+	event is InputEventMouseButton \
+	and event.button_index == BUTTON_RIGHT \
+	and event.pressed:
+		pop_menu.popup()
+		pop_menu.rect_position = event.position
+		
+func _on_item_pressed(id):
+	if pop_menu.get_item_text(id) == "新建":
+		new_file()
+		
+	if pop_menu.get_item_text(id) == "打开":
+		open_file.popup()
+		
+	elif pop_menu.get_item_text(id) == "储存":
+		save_file()
+		
+	elif pop_menu.get_item_text(id) == "另存":
+		save_as_file.popup()
+		
+	elif pop_menu.get_item_text(id) == "返回":
+		get_tree().change_scene("res://scences/Sc_test_menu.tscn")
+		
 
 func update_title():
 	OS.set_window_title(app_name + "-" + current_name)
@@ -56,22 +79,8 @@ func _on_save_as_file_file_selected(path):
 	update_title()
 
 
-func _on_open_pressed():
-	open_file.popup()
+func _on_CenterContainer_mouse_entered():
+	IsMouseInTexteditoer = true
 
-
-func _on_new_pressed():
-	new_file()
-
-
-func _on_save_as_pressed():
-	save_as_file.popup()
-
-
-func _on_save_pressed():
-	save_file()
-
-
-func _on_back_pressed():
-	get_tree().change_scene("res://scences/Sc_test_menu.tscn")
-	
+func _on_CenterContainer_mouse_exited():
+	IsMouseInTexteditoer = false

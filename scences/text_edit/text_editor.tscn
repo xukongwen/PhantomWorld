@@ -1,22 +1,20 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://font/PMingLiU.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://scences/text_edit/Button_1.tres" type="Theme" id=2]
 [ext_resource path="res://scences/text_edit/text_editor.gd" type="Script" id=3]
 [ext_resource path="res://scences/text_edit/open_file.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scences/text_edit/save_as_file.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scences/text_edit/PopupMenu.tscn" type="PackedScene" id=6]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=2]
 
 [sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
-
-[sub_resource type="Theme" id=6]
+[sub_resource type="Theme" id=5]
 TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
 TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
 TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
@@ -52,12 +50,12 @@ TextEdit/icons/fold = null
 TextEdit/icons/folded = null
 TextEdit/icons/space = null
 TextEdit/icons/tab = null
-TextEdit/styles/completion = SubResource( 3 )
-TextEdit/styles/focus = SubResource( 4 )
-TextEdit/styles/normal = SubResource( 5 )
+TextEdit/styles/completion = SubResource( 2 )
+TextEdit/styles/focus = SubResource( 3 )
+TextEdit/styles/normal = SubResource( 4 )
 TextEdit/styles/read_only = null
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 1 )
 
 [node name="text_editor" type="Control"]
@@ -91,57 +89,8 @@ margin_right = 1920.0
 margin_bottom = 5.0
 rect_min_size = Vector2( 0, 5 )
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
-margin_top = 13.0
-margin_right = 1920.0
-margin_bottom = 30.0
-
-[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_right = 8.0
-margin_bottom = 17.0
-custom_styles/separator = SubResource( 1 )
-
-[node name="new" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 16.0
-margin_right = 48.0
-margin_bottom = 17.0
-theme = ExtResource( 2 )
-text = "新建"
-
-[node name="open" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 56.0
-margin_right = 88.0
-margin_bottom = 17.0
-theme = ExtResource( 2 )
-text = "打开"
-
-[node name="open_file" parent="Panel/VBoxContainer/HBoxContainer/open" instance=ExtResource( 4 )]
-
-[node name="save" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 96.0
-margin_right = 128.0
-margin_bottom = 17.0
-theme = ExtResource( 2 )
-text = "储存"
-
-[node name="save_as" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 136.0
-margin_right = 168.0
-margin_bottom = 17.0
-theme = ExtResource( 2 )
-text = "另存"
-
-[node name="save_as_file" parent="Panel/VBoxContainer/HBoxContainer/save_as" instance=ExtResource( 5 )]
-
-[node name="back" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
-margin_left = 176.0
-margin_right = 208.0
-margin_bottom = 17.0
-theme = ExtResource( 2 )
-text = "返回"
-
 [node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer"]
-margin_top = 38.0
+margin_top = 13.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 rect_min_size = Vector2( 1900, 1010 )
@@ -150,18 +99,34 @@ size_flags_vertical = 3
 
 [node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/CenterContainer"]
 margin_left = 260.0
-margin_top = 71.0
+margin_top = 83.0
 margin_right = 1660.0
-margin_bottom = 971.0
+margin_bottom = 983.0
 rect_min_size = Vector2( 1400, 900 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 6 )
-custom_fonts/font = SubResource( 7 )
+theme = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 syntax_highlighting = true
 wrap_enabled = true
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/new" to="." method="_on_new_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/open" to="." method="_on_open_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/save_as" to="." method="_on_save_as_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/back" to="." method="_on_back_pressed"]
+
+[node name="text_menu" parent="." instance=ExtResource( 6 )]
+visible = true
+items = [ "新建", null, 0, false, false, 0, 0, null, "", false, "打开", null, 0, false, false, 1, 0, null, "", false, "储存", null, 0, false, false, 2, 0, null, "", false, "另存", null, 0, false, false, 3, 0, null, "", false, "返回", null, 0, false, false, 4, 0, null, "", false ]
+
+[node name="open_file" parent="." instance=ExtResource( 4 )]
+visible = false
+margin_left = 595.5
+margin_top = 286.466
+margin_right = 1394.5
+margin_bottom = 824.466
+
+[node name="save_as_file" parent="." instance=ExtResource( 5 )]
+margin_left = 678.057
+margin_top = 271.218
+margin_right = 1473.06
+margin_bottom = 814.218
+[connection signal="mouse_entered" from="Panel/VBoxContainer/CenterContainer" to="." method="_on_CenterContainer_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/VBoxContainer/CenterContainer" to="." method="_on_CenterContainer_mouse_exited"]
+[connection signal="file_selected" from="open_file" to="." method="_on_open_file_file_selected"]
+[connection signal="file_selected" from="save_as_file" to="." method="_on_save_as_file_file_selected"]

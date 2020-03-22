@@ -1,19 +1,32 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://font/PMingLiU.ttf" type="DynamicFontData" id=1]
 
-[sub_resource type="StyleBoxFlat" id=4]
-
-[sub_resource type="StyleBoxFlat" id=5]
-
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.980392, 0.384314, 0.0313726, 0.882353 )
+corner_detail = 1
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color( 0.180392, 0.180392, 0.180392, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 1 )
 
-[sub_resource type="Theme" id=3]
-default_font = SubResource( 2 )
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
 PopupMenu/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
 PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
@@ -26,10 +39,10 @@ PopupMenu/icons/radio_checked = null
 PopupMenu/icons/radio_unchecked = null
 PopupMenu/icons/submenu = null
 PopupMenu/icons/unchecked = null
-PopupMenu/styles/hover = SubResource( 4 )
-PopupMenu/styles/labeled_separator_left = SubResource( 5 )
+PopupMenu/styles/hover = SubResource( 1 )
+PopupMenu/styles/labeled_separator_left = null
 PopupMenu/styles/labeled_separator_right = null
-PopupMenu/styles/panel = SubResource( 1 )
+PopupMenu/styles/panel = SubResource( 3 )
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
 
@@ -38,5 +51,8 @@ margin_left = 522.123
 margin_top = 267.818
 margin_right = 810.123
 margin_bottom = 594.818
-theme = SubResource( 3 )
+theme = SubResource( 5 )
 items = [ "打开", null, 0, false, false, 0, 0, null, "", false ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
