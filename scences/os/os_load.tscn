@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
-[ext_resource path="res://Image/os/1080.png" type="Texture" id=1]
 [ext_resource path="res://scences/os/os_load.gd" type="Script" id=2]
 [ext_resource path="res://Image/os/os_logo_yang.png" type="Texture" id=3]
 [ext_resource path="res://scences/os/TextureButton.gd" type="Script" id=4]
@@ -76,14 +75,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 1 )
+margin_right = 1600.0
+margin_bottom = 1196.0
+color = Color( 0.976471, 0.141176, 0.0627451, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 

@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scences/text_edit/Button_1.tres" type="Theme" id=1]
 [ext_resource path="res://scences/Sc_test_menu.gd" type="Script" id=2]
-[ext_resource path="res://Image/human/huma_big_arm.png" type="Texture" id=4]
-[ext_resource path="res://Image/human/human_big_noarm.png" type="Texture" id=5]
-[ext_resource path="res://scences/Node2D.gd" type="Script" id=6]
+[ext_resource path="res://Script/human_arm.tscn" type="PackedScene" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -30,74 +28,57 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="human" type="TextureRect" parent="GraphEdit/HBoxContainer"]
-margin_left = 536.0
-margin_right = 771.0
-margin_bottom = 1080.0
-texture = ExtResource( 5 )
-stretch_mode = 4
-
-[node name="Node2D" type="Node2D" parent="GraphEdit/HBoxContainer/human"]
-show_behind_parent = true
-position = Vector2( 165.21, 373.225 )
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="GraphEdit/HBoxContainer/human/Node2D"]
-position = Vector2( 87.9119, 4.91721 )
-rotation = -1.2706
-texture = ExtResource( 4 )
+[node name="Sprite" parent="GraphEdit/HBoxContainer" instance=ExtResource( 3 )]
+position = Vector2( 912.41, 762.219 )
 
 [node name="Container" type="Container" parent="GraphEdit/HBoxContainer"]
-margin_left = 779.0
-margin_right = 1279.0
-margin_bottom = 1080.0
+margin_left = 978.0
+margin_right = 1478.0
+margin_bottom = 1440.0
 rect_min_size = Vector2( 500, 0 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GraphEdit/HBoxContainer"]
-margin_left = 1287.0
-margin_right = 1383.0
-margin_bottom = 1080.0
+margin_left = 1486.0
+margin_right = 1582.0
+margin_bottom = 1440.0
 alignment = 1
 
 [node name="UI_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 481.0
+margin_top = 661.0
 margin_right = 96.0
-margin_bottom = 498.0
+margin_bottom = 678.0
 theme = ExtResource( 1 )
 text = "文字编辑"
 align = 2
 
 [node name="Time_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 506.0
+margin_top = 686.0
 margin_right = 96.0
-margin_bottom = 523.0
+margin_bottom = 703.0
 theme = ExtResource( 1 )
 text = "时间事件实验"
 align = 2
 
 [node name="State_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 531.0
+margin_top = 711.0
 margin_right = 96.0
-margin_bottom = 548.0
+margin_bottom = 728.0
 theme = ExtResource( 1 )
 text = "状态机实验"
 align = 2
 
 [node name="World_test" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 556.0
+margin_top = 736.0
 margin_right = 96.0
-margin_bottom = 573.0
+margin_bottom = 753.0
 theme = ExtResource( 1 )
 text = "世界生成实验"
 align = 2
 
 [node name="quit" type="Button" parent="GraphEdit/HBoxContainer/VBoxContainer"]
-margin_top = 581.0
+margin_top = 761.0
 margin_right = 96.0
-margin_bottom = 598.0
+margin_bottom = 778.0
 theme = ExtResource( 1 )
 text = "休息"
 align = 2

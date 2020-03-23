@@ -1,0 +1,137 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/btree/script/btree.gd" type="Script" id=1]
+[ext_resource path="res://being.gd" type="Script" id=2]
+[ext_resource path="res://scences/human/being.tscn" type="PackedScene" id=3]
+
+[node name="being" instance=ExtResource( 3 )]
+script = ExtResource( 2 )
+
+[node name="BTREE" type="Node" parent="." index="0"]
+script = ExtResource( 1 )
+tree = {
+"connection": [ {
+"from": "root",
+"from_port": 0,
+"to": "selector",
+"to_port": 0
+}, {
+"from": "selector",
+"from_port": 0,
+"to": "task",
+"to_port": 0
+} ],
+"nodes": [ {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_speak",
+"offset": Vector2( 1160, -220 ),
+"params": [  ],
+"size": Vector2( 558, 164 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 570, 20 ),
+"size": Vector2( 414.659, 268 )
+},
+"name": "selector",
+"type": 3
+} ],
+"data": {
+"offset": Vector2( 0, 0 ),
+"size": Vector2( 167.547, 82.0002 )
+},
+"name": "root",
+"type": 0
+}, {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_speak",
+"offset": Vector2( 1160, -220 ),
+"params": [  ],
+"size": Vector2( 558, 164 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 570, 20 ),
+"size": Vector2( 414.659, 268 )
+},
+"name": "selector",
+"type": 3
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speak",
+"offset": Vector2( 1160, -220 ),
+"params": [  ],
+"size": Vector2( 558, 164 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"data": {
+"count": 2,
+"offset": Vector2( 530, -530 ),
+"size": Vector2( 369.479, 215 )
+},
+"name": "sequence",
+"type": 2
+}, {
+"data": {
+"count": 2,
+"offset": Vector2( 1460, -730 ),
+"size": Vector2( 243.656, 215 )
+},
+"name": "parallel",
+"type": 6
+}, {
+"data": {
+"count": 0.0,
+"offset": Vector2( 960, 480 ),
+"size": Vector2( 481.656, 147.418 )
+},
+"name": "repeat",
+"type": 8
+} ],
+"root": {
+"child": [ {
+"child": [ {
+"child": [  ],
+"data": {
+"fn": "task_speak",
+"offset": Vector2( 1160, -220 ),
+"params": [  ],
+"size": Vector2( 558, 164 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+} ],
+"data": {
+"count": 3,
+"offset": Vector2( 570, 20 ),
+"size": Vector2( 414.659, 268 )
+},
+"name": "selector",
+"type": 3
+} ],
+"data": {
+"offset": Vector2( 0, 0 ),
+"size": Vector2( 167.547, 82.0002 )
+},
+"name": "root",
+"type": 0
+}
+}

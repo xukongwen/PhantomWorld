@@ -1,7 +1,21 @@
 extends Control
 
+var defH = 1080
+var defW = 1920
+
+onready var screenSize = get_viewport().get_visible_rect().size
+
 func _ready():
+	
 	$GraphEdit.get_zoom_hbox().visible = false
+	
+	var newH = screenSize.y
+	
+	var scale = newH / defH
+
+	var options = get_node("GraphEdit/HBoxContainer/VBoxContainer/UI_test") #Get the buttons to resize
+
+	options.set_scale(scale * options.get_scale()) #Scale to new resolution
 	
 
 

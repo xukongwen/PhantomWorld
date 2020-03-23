@@ -63,7 +63,7 @@ __meta__ = {
 }
 
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer"]
-margin_right = 1920.0
+margin_right = 2560.0
 margin_bottom = 47.0
 theme = ExtResource( 3 )
 tab_align = 0
@@ -90,7 +90,7 @@ margin_left = 5.0
 margin_top = 42.0
 margin_right = -5.0
 margin_bottom = -5.0
-rect_min_size = Vector2( 1900, 1020 )
+rect_min_size = Vector2( 2500, 1400 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 

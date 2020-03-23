@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scences/human/btree_test.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scences/test_field/main_test_field.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" instance=ExtResource( 2 )]
+
+[node name="save2" parent="HBoxContainer" index="0"]
+margin_right = 142.0
+text = "b_tree_test"
+
+[node name="save" parent="HBoxContainer" index="1"]
+margin_left = 150.0
+margin_right = 223.0
+
+[node name="load" parent="HBoxContainer" index="2"]
+margin_left = 231.0
+margin_right = 302.0
+
+[node name="back" parent="HBoxContainer" index="3"]
+margin_left = 310.0
+margin_right = 384.0
+
+[node name="quit" parent="HBoxContainer" index="4"]
+margin_left = 392.0
+margin_right = 458.0
+
+[node name="VSeparator" parent="HBoxContainer" index="5"]
+margin_left = 466.0
+margin_right = 474.0
+
+[node name="func1" parent="HBoxContainer" index="6"]
+margin_left = 482.0
+margin_right = 566.0
+
+[node name="being" parent="." index="1" instance=ExtResource( 1 )]
+position = Vector2( 1065.53, 972.201 )

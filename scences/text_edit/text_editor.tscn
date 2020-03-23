@@ -6,15 +6,15 @@
 [ext_resource path="res://scences/text_edit/save_as_file.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scences/text_edit/PopupMenu.tscn" type="PackedScene" id=6]
 
+[sub_resource type="StyleBoxFlat" id=1]
+
 [sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.0941176, 0.0941176, 0.0941176, 1 )
-
-[sub_resource type="Theme" id=5]
+[sub_resource type="Theme" id=4]
 TextEdit/colors/background_color = Color( 0, 0, 0, 0 )
 TextEdit/colors/bookmark_color = Color( 0.08, 0.49, 0.98, 1 )
 TextEdit/colors/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
@@ -50,12 +50,12 @@ TextEdit/icons/fold = null
 TextEdit/icons/folded = null
 TextEdit/icons/space = null
 TextEdit/icons/tab = null
-TextEdit/styles/completion = SubResource( 2 )
-TextEdit/styles/focus = SubResource( 3 )
-TextEdit/styles/normal = SubResource( 4 )
+TextEdit/styles/completion = SubResource( 1 )
+TextEdit/styles/focus = SubResource( 2 )
+TextEdit/styles/normal = SubResource( 3 )
 TextEdit/styles/read_only = null
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=5]
 font_data = ExtResource( 1 )
 
 [node name="text_editor" type="Control"]
@@ -85,28 +85,28 @@ __meta__ = {
 }
 
 [node name="VSplitContainer" type="VSplitContainer" parent="Panel/VBoxContainer"]
-margin_right = 1920.0
+margin_right = 2560.0
 margin_bottom = 5.0
 rect_min_size = Vector2( 0, 5 )
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer"]
 margin_top = 13.0
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_right = 2560.0
+margin_bottom = 1440.0
 rect_min_size = Vector2( 1900, 1010 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/CenterContainer"]
-margin_left = 260.0
-margin_top = 83.0
-margin_right = 1660.0
-margin_bottom = 983.0
-rect_min_size = Vector2( 1400, 900 )
+margin_left = 279.0
+margin_top = 63.0
+margin_right = 2279.0
+margin_bottom = 1363.0
+rect_min_size = Vector2( 2000, 1300 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = SubResource( 5 )
-custom_fonts/font = SubResource( 6 )
+theme = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 syntax_highlighting = true
 wrap_enabled = true
 

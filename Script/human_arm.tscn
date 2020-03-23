@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Image/human/huma_big_arm.png" type="Texture" id=1]
+[ext_resource path="res://Image/human/human_big_noarm.png" type="Texture" id=2]
+[ext_resource path="res://Node2D.gd" type="Script" id=3]
+
+[node name="Sprite" type="Sprite"]
+texture = ExtResource( 2 )
+
+[node name="Node2D" type="Node2D" parent="."]
+show_behind_parent = true
+position = Vector2( 47.3101, -166.712 )
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+show_behind_parent = true
+position = Vector2( 93.6898, 1.09161 )
+rotation = -1.27235
+texture = ExtResource( 1 )

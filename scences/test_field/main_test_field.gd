@@ -9,3 +9,8 @@ func _on_back_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+func task_speak(task):
+	print("ok")
+	
+	

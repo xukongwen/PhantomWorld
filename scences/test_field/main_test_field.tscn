@@ -6,10 +6,12 @@
 script = ExtResource( 1 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_top = 1029.36
-margin_right = 1920.0
-margin_bottom = 1079.36
+margin_left = 7.32089
+margin_top = 1382.45
+margin_right = 1924.32
+margin_bottom = 1432.45
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
