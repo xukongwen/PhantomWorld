@@ -1,6 +1,6 @@
 extends GraphEdit
 
-var spn = load("res://scences/nodes/graph_node.tscn")
+var spn = load("res://scences/nodes/Dialogue.tscn")
 onready var p_edit = self
 onready var save_pop = get_node("save_as_file")
 onready var load_pop = get_node("open_file")

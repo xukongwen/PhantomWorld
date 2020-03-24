@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/btree/script/btree.gd" type="Script" id=1]
 [ext_resource path="res://being.gd" type="Script" id=2]
 [ext_resource path="res://scences/human/being.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Image/human/talk_pop.png" type="Texture" id=4]
+[ext_resource path="res://font/PMingLiU.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 5 )
 
 [node name="being" instance=ExtResource( 3 )]
+position = Vector2( 334.237, 327.51 )
 script = ExtResource( 2 )
 
 [node name="BTREE" type="Node" parent="." index="0"]
@@ -13,12 +22,17 @@ tree = {
 "connection": [ {
 "from": "root",
 "from_port": 0,
-"to": "selector",
+"to": "sequence",
 "to_port": 0
 }, {
-"from": "selector",
+"from": "sequence",
 "from_port": 0,
 "to": "task",
+"to_port": 0
+}, {
+"from": "sequence",
+"from_port": 1,
+"to": "task2",
 "to_port": 0
 } ],
 "nodes": [ {
@@ -26,112 +40,166 @@ tree = {
 "child": [ {
 "child": [  ],
 "data": {
-"fn": "task_speak",
-"offset": Vector2( 1160, -220 ),
+"fn": "task_eat",
+"offset": Vector2( 1220, -220 ),
 "params": [  ],
 "size": Vector2( 558, 164 ),
 "values": [  ]
 },
 "name": "task",
 "type": 1
-} ],
+}, {
+"child": [  ],
 "data": {
-"count": 3,
-"offset": Vector2( 570, 20 ),
-"size": Vector2( 414.659, 268 )
+"fn": "task_speak",
+"offset": Vector2( 1250, 120 ),
+"params": [  ],
+"size": Vector2( 558, 164 ),
+"values": [  ]
 },
-"name": "selector",
-"type": 3
+"name": "task2",
+"type": 1
 } ],
 "data": {
-"offset": Vector2( 0, 0 ),
-"size": Vector2( 167.547, 82.0002 )
+"count": 2,
+"offset": Vector2( 730, -470 ),
+"size": Vector2( 272.094, 215 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( -510, 20 ),
+"size": Vector2( 167.547, 82.0004 )
 },
 "name": "root",
 "type": 0
 }, {
+"child": [  ],
+"data": {
+"fn": "task_eat",
+"offset": Vector2( 1220, -220 ),
+"params": [  ],
+"size": Vector2( 558, 164 ),
+"values": [  ]
+},
+"name": "task",
+"type": 1
+}, {
+"child": [  ],
+"data": {
+"fn": "task_speak",
+"offset": Vector2( 1250, 120 ),
+"params": [  ],
+"size": Vector2( 558, 164 ),
+"values": [  ]
+},
+"name": "task2",
+"type": 1
+}, {
 "child": [ {
 "child": [  ],
 "data": {
-"fn": "task_speak",
-"offset": Vector2( 1160, -220 ),
+"fn": "task_eat",
+"offset": Vector2( 1220, -220 ),
 "params": [  ],
 "size": Vector2( 558, 164 ),
 "values": [  ]
 },
 "name": "task",
 "type": 1
-} ],
-"data": {
-"count": 3,
-"offset": Vector2( 570, 20 ),
-"size": Vector2( 414.659, 268 )
-},
-"name": "selector",
-"type": 3
 }, {
 "child": [  ],
 "data": {
 "fn": "task_speak",
-"offset": Vector2( 1160, -220 ),
+"offset": Vector2( 1250, 120 ),
 "params": [  ],
 "size": Vector2( 558, 164 ),
 "values": [  ]
 },
-"name": "task",
+"name": "task2",
 "type": 1
-}, {
+} ],
 "data": {
 "count": 2,
-"offset": Vector2( 530, -530 ),
-"size": Vector2( 369.479, 215 )
+"offset": Vector2( 730, -470 ),
+"size": Vector2( 272.094, 215 )
 },
 "name": "sequence",
 "type": 2
 }, {
 "data": {
 "count": 2,
-"offset": Vector2( 1460, -730 ),
-"size": Vector2( 243.656, 215 )
+"offset": Vector2( 280, 20 ),
+"size": Vector2( 414.659, 268 )
 },
-"name": "parallel",
-"type": 6
-}, {
-"data": {
-"count": 0.0,
-"offset": Vector2( 960, 480 ),
-"size": Vector2( 481.656, 147.418 )
-},
-"name": "repeat",
-"type": 8
+"name": "selector",
+"type": 3
 } ],
 "root": {
 "child": [ {
 "child": [ {
 "child": [  ],
 "data": {
-"fn": "task_speak",
-"offset": Vector2( 1160, -220 ),
+"fn": "task_eat",
+"offset": Vector2( 1220, -220 ),
 "params": [  ],
 "size": Vector2( 558, 164 ),
 "values": [  ]
 },
 "name": "task",
 "type": 1
-} ],
+}, {
+"child": [  ],
 "data": {
-"count": 3,
-"offset": Vector2( 570, 20 ),
-"size": Vector2( 414.659, 268 )
+"fn": "task_speak",
+"offset": Vector2( 1250, 120 ),
+"params": [  ],
+"size": Vector2( 558, 164 ),
+"values": [  ]
 },
-"name": "selector",
-"type": 3
+"name": "task2",
+"type": 1
 } ],
 "data": {
-"offset": Vector2( 0, 0 ),
-"size": Vector2( 167.547, 82.0002 )
+"count": 2,
+"offset": Vector2( 730, -470 ),
+"size": Vector2( 272.094, 215 )
+},
+"name": "sequence",
+"type": 2
+} ],
+"data": {
+"offset": Vector2( -510, 20 ),
+"size": Vector2( 167.547, 82.0004 )
 },
 "name": "root",
 "type": 0
 }
+}
+
+[node name="Panel" type="Panel" parent="." index="6"]
+margin_left = 34.5784
+margin_top = -246.061
+margin_right = 183.578
+margin_bottom = -206.061
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="talk_pop" type="Sprite" parent="Panel" index="0"]
+show_behind_parent = true
+position = Vector2( 16.0879, 46.2953 )
+texture = ExtResource( 4 )
+
+[node name="stat_text" type="Label" parent="Panel" index="1"]
+margin_right = 148.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
 }

@@ -1,12 +1,12 @@
 extends GraphNode
 
 
-func _on_Node_resize_request(new_minsize):
-	self.rect_size = new_minsize
+
+func _on_Node_resized():
+	get_node("VBoxContainer/TextEdit").rect_min_size.y = self.get_rect().size.y - 45
 
 
 func _on_Node_close_request():
-
 	var graph = get_parent()
 	var node_name = self.name
 	var connection_list = graph.get_connection_list()
@@ -16,9 +16,7 @@ func _on_Node_close_request():
 			graph.disconnect_node(i["from"], i["from_port"], i["to"], i["to_port"])
 	graph.remove_child(self)
 	self.queue_free()
-	
-	
 
-func _on_Node_resized():
-	#这里是把textedit给实时调整大小
-	get_node("VBoxContainer/TextEdit").rect_min_size.y = self.get_rect().size.y -5
+
+func _on_Node_resize_request(new_minsize):
+	self.rect_size = new_minsize

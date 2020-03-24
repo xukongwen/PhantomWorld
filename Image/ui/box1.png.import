@@ -1,0 +1,13 @@
+[remap]
+
+importer="image"
+type="Image"
+path="res://.import/box1.png-f36589273d87314a612d4190ca5b0fff.image"
+
+[deps]
+
+source_file="res://Image/ui/box1.png"
+dest_files=[ "res://.import/box1.png-f36589273d87314a612d4190ca5b0fff.image" ]
+
+[params]
+

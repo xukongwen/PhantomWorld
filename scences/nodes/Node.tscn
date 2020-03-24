@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Node.gd" type="Script" id=1]
+
+[sub_resource type="Theme" id=1]
+GraphNode/colors/close_color = Color( 0, 0, 0, 1 )
+GraphNode/colors/resizer_color = Color( 0, 0, 0, 1 )
+GraphNode/colors/title_color = Color( 0, 0, 0, 1 )
+GraphNode/constants/close_offset = 36
+GraphNode/constants/port_offset = 6
+GraphNode/constants/separation = 2
+GraphNode/constants/title_offset = 40
+GraphNode/fonts/title_font = null
+GraphNode/icons/close = null
+GraphNode/icons/port = null
+GraphNode/icons/resizer = null
+GraphNode/styles/breakpoint = null
+GraphNode/styles/comment = null
+GraphNode/styles/commentfocus = null
+GraphNode/styles/defaultfocus = null
+GraphNode/styles/defaultframe = null
+GraphNode/styles/frame = null
+GraphNode/styles/position = null
+GraphNode/styles/selectedframe = null
+
+[node name="Node" type="GraphNode"]
+margin_right = 378.0
+margin_bottom = 202.0
+theme = SubResource( 1 )
+show_close = true
+resizable = true
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color( 1, 1, 1, 1 )
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color( 1, 1, 1, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 32.0
+margin_top = 48.0
+margin_right = 346.0
+margin_bottom = 148.0
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
+margin_right = 314.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+wrap_enabled = true
+[connection signal="close_request" from="." to="." method="_on_Node_close_request"]
+[connection signal="resize_request" from="." to="." method="_on_Node_resize_request"]
+[connection signal="resized" from="." to="." method="_on_Node_resized"]
