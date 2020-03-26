@@ -28,10 +28,10 @@ pause_mode = 1
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -741.0
-margin_top = -534.0
-margin_right = 2573.0
-margin_bottom = 1576.0
+margin_left = -400.744
+margin_top = -273.919
+margin_right = 2913.26
+margin_bottom = 1836.08
 color = Color( 0.223529, 0.215686, 0.215686, 1 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,9 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scences/test_field/main_test_field.gd" type="Script" id=1]
+[ext_resource path="res://scences/text_edit/Button_1.tres" type="Theme" id=2]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 7.0
+margin_top = 1382.0
+margin_right = 615.0
+margin_bottom = 1432.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 7.32089
@@ -15,44 +26,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="save2" type="Button" parent="HBoxContainer"]
-margin_right = 169.0
+[node name="scence_name" type="Button" parent="HBoxContainer"]
+margin_right = 84.0
 margin_bottom = 50.0
+theme = ExtResource( 2 )
 text = "scence_name"
 
 [node name="save" type="Button" parent="HBoxContainer"]
-margin_left = 177.0
-margin_right = 250.0
+margin_left = 92.0
+margin_right = 124.0
 margin_bottom = 50.0
-text = "save"
+theme = ExtResource( 2 )
+text = "储存"
 
 [node name="load" type="Button" parent="HBoxContainer"]
-margin_left = 258.0
-margin_right = 329.0
+margin_left = 132.0
+margin_right = 164.0
 margin_bottom = 50.0
-text = "load"
+theme = ExtResource( 2 )
+text = "读取"
 
 [node name="back" type="Button" parent="HBoxContainer"]
-margin_left = 337.0
-margin_right = 411.0
+margin_left = 172.0
+margin_right = 204.0
 margin_bottom = 50.0
-text = "back"
+theme = ExtResource( 2 )
+text = "返回"
 
 [node name="quit" type="Button" parent="HBoxContainer"]
-margin_left = 419.0
-margin_right = 485.0
+margin_left = 212.0
+margin_right = 244.0
 margin_bottom = 50.0
-text = "quit"
+theme = ExtResource( 2 )
+text = "退出"
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
-margin_left = 493.0
-margin_right = 501.0
+margin_left = 252.0
+margin_right = 260.0
 margin_bottom = 50.0
 
 [node name="func1" type="Button" parent="HBoxContainer"]
-margin_left = 509.0
-margin_right = 593.0
+margin_left = 268.0
+margin_right = 300.0
 margin_bottom = 50.0
-text = "func1"
+theme = ExtResource( 2 )
+text = "功能"
 [connection signal="pressed" from="HBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]

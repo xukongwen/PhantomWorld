@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scences/test_field/BehaviorAction2.gd" type="Script" id=1]
+[ext_resource path="res://addons/godot-behavior-tree-plugin/sequence.gd" type="Script" id=2]
+[ext_resource path="res://addons/godot-behavior-tree-plugin/selector.gd" type="Script" id=3]
+[ext_resource path="res://addons/godot-behavior-tree-plugin/behavior_tree.gd" type="Script" id=4]
+
+[node name="BehaviorTree" type="Node"]
+script = ExtResource( 4 )
+
+[node name="Life" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="If_hunger" type="Node" parent="Life"]
+script = ExtResource( 2 )
+
+[node name="move" type="Node" parent="Life"]
+script = ExtResource( 1 )
