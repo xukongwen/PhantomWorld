@@ -18,15 +18,16 @@ script = ExtResource( 3 )
 [node name="BehaviorTree" parent="." index="6" instance=ExtResource( 2 )]
 
 [node name="Panel" type="Panel" parent="." index="7"]
-margin_left = 40.0
-margin_top = -223.0
-margin_right = 199.0
-margin_bottom = -183.0
+margin_left = 55.3718
+margin_top = -157.321
+margin_right = 214.372
+margin_bottom = -117.321
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Panel" index="0"]
+[node name="state_text" type="Label" parent="Panel" index="0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
@@ -35,3 +36,28 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="speak" type="Panel" parent="." index="8"]
+margin_left = -14.4999
+margin_top = -242.564
+margin_right = 144.5
+margin_bottom = -202.564
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="speak_text" type="Label" parent="speak" index="0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 1 )
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="." index="9"]
+wait_time = 2.0
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

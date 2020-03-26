@@ -28,6 +28,10 @@ boot_splash/use_filter=false
 config/icon="res://UI/logo.png"
 config/macos_native_icon="res://UI/logo.icns"
 
+[autoload]
+
+Global="*res://Scripts/global.gd"
+
 [display]
 
 window/size/width=2560
