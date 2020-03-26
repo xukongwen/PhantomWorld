@@ -58,13 +58,17 @@ func move(delta):
 	position += direction*speed*delta
 	
 func speak():
+
 	$Think_panle/Thinking.text = "徐空文说道：" + choose(speaking)
+	
 	
 func ego():
 	$Think_panle/Thinking.text = "徐空文想：" + choose(thinkings)
+
 	
 func eatting():
 	$Think_panle/Thinking.text = "徐空文吃：" + choose(eatting)
+	
 	
 	
 func update_state_panel(state):

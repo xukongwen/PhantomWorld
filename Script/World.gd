@@ -36,19 +36,3 @@ func _init(time):
 func equals(second, minute, hour, day):
 	return self.second == second and self.minute == minute and self.hour == hour and self.day == day
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

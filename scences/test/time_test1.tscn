@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ColorRect.gd" type="Script" id=1]
+
+[node name="ColorRect" type="ColorRect"]
+margin_right = 655.0
+margin_bottom = 542.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "time"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -7,6 +7,7 @@ var time = 0
 var time_mult = 60
 var paused = false
 var time_scale = 1
+var prev_time = 0.0
 
 var deg = 0
 var tempture = 0
@@ -24,23 +25,40 @@ func _process(delta):
 	
 	# 设定游戏事件和真实时间的差距
 	time += delta*time_mult
+	
+	var date_times = []
+	var int_time = floor(time)
+	var prev_int_time = floor(prev_time)
+	while prev_int_time < int_time:
+		var new = World_dao.new(prev_int_time)
+		date_times.append(new)
+		prev_int_time += 1
 
 	# 这个DateTime.new(time)就是获取秒，分，小时，日的时间信息结构
-	emit_signal("time_passed", World_dao.new(time))
+	emit_signal("time_passed", date_times)
+	
+	prev_time = time
 	
 	$time_lable.text = str("日:  ", World_dao.new(time).day,"  ", "时:  ", World_dao.new(time).hour,"点")
 		
 	# 这里是把太阳，月亮的位置（角度）和游戏时间匹配
 	$human_01/yinyang.rotation_degrees += (0.1/60)*time_scale/24*60
 	
+	
+	
 
 func _on_time_passed(date_times):
-	
-	if date_times.equals(0,0,12,0):
-		$event.text = "现在是正午"
-	
-	temp(date_times.hour)
+	for dt in date_times:
+		temp(dt.hour)
 		
+		if dt.hour == 12:
+			$event.text = "现在是正午"
+		elif dt.hour == 0:
+			$event.text = "现在是午夜"
+		
+#		if dt.equals(0,0,12,0):
+#			$event.text = "现在是正午"
+	
 		
 func temp(time):
 	$deg.visible = true
