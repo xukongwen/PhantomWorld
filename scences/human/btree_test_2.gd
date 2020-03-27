@@ -17,6 +17,9 @@ export(int, 1024) var food_price = 5
 export(int, 1024) var wage = 2
 export(int, 100) var max_hunger = 80
 
+export(int, 1000) var xing_en = 80
+export(int, 100) var self_yin_yang = 80
+
 onready var blackboard = $BehaviorBlackboard
 onready var behavior_tree = $BehaviorTree
 
