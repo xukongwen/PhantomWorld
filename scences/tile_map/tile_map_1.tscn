@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Image/Tiles/tile_set_1.png" type="Texture" id=1]
 [ext_resource path="res://scences/tile_map/tile_map_1.gd" type="Script" id=2]
@@ -42,6 +42,10 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 0/shapes = [  ]
 0/z_index = 0
 
+[sub_resource type="NavigationPolygon" id=9]
+vertices = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
+
 [sub_resource type="TileSet" id=3]
 0/name = "tile_set_1.png 0"
 0/texture = ExtResource( 1 )
@@ -51,6 +55,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
+0/navigation = SubResource( 9 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 0/shape_one_way = false
@@ -116,22 +121,24 @@ export var amount : int
 script = SubResource( 5 )
 amount = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="World" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Grass" type="TileMap" parent="."]
+[node name="nav" type="Navigation2D" parent="."]
+
+[node name="Grass" type="TileMap" parent="nav"]
 tile_set = SubResource( 1 )
 format = 1
 
-[node name="Background" type="TileMap" parent="."]
+[node name="Background" type="TileMap" parent="nav"]
 tile_set = SubResource( 2 )
 format = 1
 
-[node name="Roads" type="TileMap" parent="."]
+[node name="Roads" type="TileMap" parent="nav"]
 tile_set = SubResource( 3 )
 format = 1
 
-[node name="Enviroment" type="TileMap" parent="."]
+[node name="Enviroment" type="TileMap" parent="nav"]
 tile_set = SubResource( 4 )
 format = 1
 
@@ -140,7 +147,8 @@ position = Vector2( 1277.56, 713.119 )
 current = true
 script = ExtResource( 3 )
 
-[node name="nav" type="Navigation2D" parent="."]
+[node name="being" parent="." instance=ExtResource( 4 )]
+position = Vector2( 718.492, 585.075 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -152,13 +160,8 @@ __meta__ = {
 }
 
 [node name="draw_rect" type="ColorRect" parent="UI/Base"]
-modulate = Color( 0.101961, 0.894118, 0.847059, 0.4 )
-margin_right = 40.0
-margin_bottom = 40.0
+modulate = Color( 0.933333, 0.180392, 0.0431373, 0.886275 )
 rect_clip_content = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="being" parent="." instance=ExtResource( 4 )]
-position = Vector2( 718.492, 585.075 )

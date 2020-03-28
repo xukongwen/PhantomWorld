@@ -98,17 +98,17 @@ func make_grass_map():
 		for y in map_size.y:
 			var a = noise.get_noise_2d(x,y)
 			if a < grass_cap:
-				$Grass.set_cell(x,y,0)
+				$nav/Grass.set_cell(x,y,0)
 				
-	$Grass.update_bitmask_region(Vector2(0.0, 0.0), Vector2(map_size.x, map_size.y))
+	$nav/Grass.update_bitmask_region(Vector2(0.0, 0.0), Vector2(map_size.x, map_size.y))
 	
 func make_road_map():
 	for x in map_size.x:
 		for y in map_size.y:
 			var a = noise.get_noise_2d(x,y)
 			if a < road_caps.x and a > road_caps.y:
-				$Roads.set_cell(x,y,0)
-	$Roads.update_bitmask_region(Vector2(0.0, 0.0), Vector2(map_size.x, map_size.y))
+				$nav/Roads.set_cell(x,y,0)
+	$nav/Roads.update_bitmask_region(Vector2(0.0, 0.0), Vector2(map_size.x, map_size.y))
 	
 func make_enviroment_map():
 	for x in map_size.x:
@@ -119,18 +119,18 @@ func make_enviroment_map():
 				if chance < 2:
 				
 					var num = randi() % 4
-					$Enviroment.set_cell(x,y, num)
+					$nav/Enviroment.set_cell(x,y, num)
 				
 				
 
 func make_background():
 	for x in map_size.x:
 		for y in map_size.y:
-			if $Grass.get_cell(x,y) == -1:
-				if $Grass.get_cell(x,y-1) == 0:
-					$Background.set_cell(x,y,0)
+			if $nav/Grass.get_cell(x,y) == -1:
+				if $nav/Grass.get_cell(x,y-1) == 0:
+					$nav/Background.set_cell(x,y,0)
 				
-	$Background.update_bitmask_region(Vector2(0.0, 0.0), Vector2(map_size.x, map_size.y))
+	$nav/Background.update_bitmask_region(Vector2(0.0, 0.0), Vector2(map_size.x, map_size.y))
 				
 
 

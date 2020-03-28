@@ -65,7 +65,7 @@ func _process(delta):
 			end = mouseposGlobal
 			endv = mousepos
 			is_dragging = false
-			#draw_area(false)
+			draw_area(false)
 			emit_signal("area_selected")
 		else:
 			end = start
@@ -105,7 +105,7 @@ func draw_area(s = true):
 	pos.y = min(startv.y, endv.y)
 	pos.y -= OS.window_size.y
 	rectd.rect_position = pos
-
+	
 	rectd.rect_size *= int(s) # true = 1 and false = 0
 
 func _input(event):
@@ -113,9 +113,9 @@ func _input(event):
 		if event.is_pressed():
 			zooming = true
 			if event.button_index == BUTTON_WHEEL_UP:
-				zoomfactor -= 0.02 * zoomspeed
+				zoomfactor -= 0.01 * zoomspeed
 			if event.button_index == BUTTON_WHEEL_DOWN:
-				zoomfactor += 0.02 * zoomspeed
+				zoomfactor += 0.01 * zoomspeed
 		else:
 			zooming = false
 	

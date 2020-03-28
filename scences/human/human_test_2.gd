@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed = 100
+export var speed = 200
 
 var selected = false setget set_selected
 onready var box = $box
