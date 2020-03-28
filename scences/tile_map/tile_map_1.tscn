@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Image/Tiles/tile_set_1.png" type="Texture" id=1]
 [ext_resource path="res://scences/tile_map/tile_map_1.gd" type="Script" id=2]
 [ext_resource path="res://scences/tile_map/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://scences/human/human_test_2.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scences/tile_map/All.gd" type="Script" id=5]
+[ext_resource path="res://scences/time/time.tscn" type="PackedScene" id=6]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -92,7 +93,12 @@ script = ExtResource( 3 )
 [node name="being" parent="." instance=ExtResource( 4 )]
 position = Vector2( 718.492, 585.075 )
 
+[node name="kongwen" parent="." instance=ExtResource( 4 )]
+position = Vector2( 929.993, 673.289 )
+
 [node name="UI" type="CanvasLayer" parent="."]
+
+[node name="time" parent="UI" instance=ExtResource( 6 )]
 
 [node name="Base" type="Control" parent="UI"]
 margin_left = 1167.7
