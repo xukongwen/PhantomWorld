@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scences/human/being.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scences/human/human_test_2.gd" type="Script" id=2]
+[ext_resource path="res://Image/human/select.png" type="Texture" id=3]
+[ext_resource path="res://font/PMingLiU.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
+
+[node name="being" groups=[
+"units",
+] instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="box" type="Sprite" parent="." index="5"]
+visible = false
+position = Vector2( 0, -200.419 )
+z_index = 1
+texture = ExtResource( 3 )
+
+[node name="label" type="Label" parent="." index="6"]
+visible = false
+margin_left = 34.0
+margin_top = -187.0
+margin_right = 120.0
+margin_bottom = -162.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
