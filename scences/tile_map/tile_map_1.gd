@@ -88,49 +88,33 @@ func _ready():
 	noise.octaves = 1.0
 	noise.period = 12
 	noise.persistence = 0.7
-	make_grass_map()
-	make_road_map()
-	make_enviroment_map()
-	make_background()
 	
-func make_grass_map():
+	make_allmap()
+#
+	
+########自动生成地图部分#################
+
+func make_allmap():
 	for x in map_size.x:
 		for y in map_size.y:
 			var a = noise.get_noise_2d(x,y)
 			if a < grass_cap:
-				$nav/Grass.set_cell(x,y,0)
-				
-	$nav/Grass.update_bitmask_region(Vector2(0.0, 0.0), Vector2(map_size.x, map_size.y))
-	
-func make_road_map():
-	for x in map_size.x:
-		for y in map_size.y:
-			var a = noise.get_noise_2d(x,y)
+				$nav/All.set_cell(x,y,0)
 			if a < road_caps.x and a > road_caps.y:
-				$nav/Roads.set_cell(x,y,0)
-	$nav/Roads.update_bitmask_region(Vector2(0.0, 0.0), Vector2(map_size.x, map_size.y))
-	
-func make_enviroment_map():
-	for x in map_size.x:
-		for y in map_size.y:
-			var a = noise.get_noise_2d(x,y)
+				$nav/All.set_cell(x,y,1)
 			if a < enviroment_caps.x and a > enviroment_caps.y or a < enviroment_caps.z:
+				# 这里是在2-3之间放置环境物品
 				var chance = randi() % 100
 				if chance < 2:
-				
-					var num = randi() % 4
-					$nav/Enviroment.set_cell(x,y, num)
-				
-				
+					#在2-3之间选择
+					var num = [2,3]
+					var new_n = num[randi() % num.size()]
+					$nav/All.set_cell(x,y,new_n)
+		
+	# 下面是加载自动tile的东西	
+	#$nav/All.update_bitmask_region(Vector2(0.0, 0.0), Vector2(map_size.x, map_size.y))	
 
-func make_background():
-	for x in map_size.x:
-		for y in map_size.y:
-			if $nav/Grass.get_cell(x,y) == -1:
-				if $nav/Grass.get_cell(x,y-1) == 0:
-					$nav/Background.set_cell(x,y,0)
-				
-	$nav/Background.update_bitmask_region(Vector2(0.0, 0.0), Vector2(map_size.x, map_size.y))
-				
+			
+	
 
 

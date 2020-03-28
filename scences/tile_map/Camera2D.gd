@@ -60,6 +60,7 @@ func _process(delta):
 		end = mouseposGlobal
 		endv = mousepos
 		draw_area()
+		
 	if Input.is_action_just_released("ui_left_mouse_button"):
 		if startv.distance_to(mousepos) > 20:
 			end = mouseposGlobal
@@ -122,3 +123,7 @@ func _input(event):
 	if event is InputEventMouse:
 		mousepos = event.position
 		mouseposGlobal = get_global_mouse_position()
+
+
+
+		
