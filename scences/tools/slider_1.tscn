@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sound/os/tick_002.wav" type="AudioStream" id=1]
+
+[node name="HSlider" type="HSlider"]
+margin_left = 1814.0
+margin_top = 827.0
+margin_right = 1970.0
+margin_bottom = 859.0
+max_value = 6.0
+value = 2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )

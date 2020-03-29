@@ -22,6 +22,8 @@ func fuxi(num):
 	if num == 0:
 		return [0]
 	elif num == 1:
+		for i in range(2):
+			draw_gua([[1],[-1]][i],i)
 		return [[1],[-1]]
 		
 	else:
@@ -50,8 +52,6 @@ func draw_gua(gua, x):
 			add_child(new_yin)
 	
 
-
-
 func xian_tian(num):
 	var newGua = []
 	if num == 0:
@@ -67,7 +67,6 @@ func xian_tian(num):
 			
 	return newGua
 
-		
 func clear_gua():
 	for i in get_children():
 		if i is ColorRect:
@@ -76,6 +75,8 @@ func clear_gua():
 func _on_Button_pressed():
 	clear_gua()
 	gua += 1
+	if gua >= 5:
+		gua = 5
 	fuxi(gua)
 	
 
@@ -84,3 +85,11 @@ func _on_min_pressed():
 	clear_gua()
 	gua -= 1
 	fuxi(gua)
+
+
+func _on_HSlider_value_changed(value):
+	$CanvasLayer/HSlider/tick.play()
+	clear_gua()
+	gua = value
+	fuxi(gua)
+	

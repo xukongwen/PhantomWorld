@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scences/animation/fuxi_8_gua_animation.gd" type="Script" id=1]
 [ext_resource path="res://scences/tools/cam_mother.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scences/buttons/button_mother_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scences/tools/slider_1.tscn" type="PackedScene" id=4]
 
 [node name="Fuxi" type="Control"]
 anchor_right = 1.0
@@ -20,6 +21,8 @@ autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
+[node name="HSlider" parent="CanvasLayer" instance=ExtResource( 4 )]
+
 [node name="Button" parent="CanvasLayer" instance=ExtResource( 3 )]
 margin_left = 1813.92
 margin_top = 724.186
@@ -33,5 +36,6 @@ margin_top = 761.186
 margin_right = 1861.92
 margin_bottom = 798.186
 text = "减少卦"
+[connection signal="value_changed" from="CanvasLayer/HSlider" to="." method="_on_HSlider_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="CanvasLayer/min" to="." method="_on_min_pressed"]
