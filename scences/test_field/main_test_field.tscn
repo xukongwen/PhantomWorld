@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scences/test_field/main_test_field.gd" type="Script" id=1]
 [ext_resource path="res://scences/text_edit/Button_1.tres" type="Theme" id=2]
+[ext_resource path="res://scences/buttons/button_mother_1.tscn" type="PackedScene" id=3]
 
-[node name="Node2D" type="Node2D"]
+[node name="Tool_box" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -65,11 +66,11 @@ margin_left = 252.0
 margin_right = 260.0
 margin_bottom = 50.0
 
-[node name="func1" type="Button" parent="HBoxContainer"]
+[node name="func1" parent="HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 268.0
-margin_right = 300.0
+margin_right = 316.0
 margin_bottom = 50.0
-theme = ExtResource( 2 )
-text = "功能"
+text = "增加卦"
 [connection signal="pressed" from="HBoxContainer/back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="HBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="HBoxContainer/func1" to="HBoxContainer/func1" method="_on_func1_pressed"]

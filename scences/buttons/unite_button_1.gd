@@ -9,3 +9,4 @@ func connect_me(obj, unit_name):
 
 func _pressed():
 	emit_signal("was_pressed")
+
